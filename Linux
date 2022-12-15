@@ -1,0 +1,3433 @@
+ ******** 
+ * LAB2 * 
+ ******** 
+To create the files using "cat" and "touch" 
+------------------------------------------- 
+ Create the file using "cat" 
+ -------------------------- 
+ normal file 
+ ----------- 
+ Syn $cat > <filename> 
+ Eg $cat > hai 
+ 
+ hidden file 
+ ----------- 
+ Syn $cat > .<filename> 
+ Eg $cat > .hai1 
+ Create the file using "touch" 
+ ----------------------------- 
+ Note: It is used to create an empty file. 
+ Normal file 
+ ------------ 
+ Syn $touch <file1> <file2> <file3> ... 
+ Eg $touch hai1 hai2 hai3 
+ hidden file: 
+ ------------ 
+ Syn $touch .<file1> .<file2> .<file3> ... 
+ Eg $touch .hai1 .hai2 .hai3 
+To create the directory 
+----------------------- 
+ normal dir 
+ ---------- 
+ Syn $mkdir <dir name> 
+ Eg $mkdir hello 
+ hidden dir.: 
+ ------------ 
+ Syn $mkdir .<dir name> 
+ Eg $mkdir .hello 
+ 
+To change the directory 
+----------------------- 
+Syn $cd <dir name> 
+Eg $cd hello 
+ 
+To list and view the files and directories 
+------------------------------------------ 
+$ls -> To list all files/dir in a current dir. 
+$ls -a -> To list all files/dir in a current dir with hidden files/dir. 
+$ll {or} ls -l -> Long list format of all files/dir in a current dir. 
+$ls -la -> Long list format of all files/dir in a current dir with 
+ hidden files/dir. 
+To view the long list format of particular file 
+----------------------------------------------- 
+Syn $ls -l <filename> 
+Eg $ls -l hai 
+To view the long list format of particular dir 
+----------------------------------------------- 
+Syn $ls -ld <dir name> 
+Eg $ls -ld hai 
+To remove the files 
+------------------- 
+ Remove the file with confirmation 
+ ---------------------------------- 
+ Syn $rm -i <filename> 
+ Eg $rm -i hai 
+ 
+ Remove the file without confirmation 
+ ------------------------------------ 
+ Syn $rm <filename> 
+ Eg $rm hai 
+To remove the directory 
+----------------------- 
+ Remove the empty directory 
+ --------------------------- 
+ Sny $rmdir <dir name> 
+ Eg $rmdir hello 
+ Remove the directory along with it's contents 
+ --------------------------------------------- 
+ Syn $rm -rf <dir .name> 
+ Eg $rm -rf hello 
+To copy the file 
+---------------- 
+Syn $cp <source filename> <destination filename> 
+Eg $cp hai hello 
+ 
+To copy the directory 
+--------------------- 
+Syn $cp -r <source dir name> <destination dir name>
+Eg $cp -r sam ram 
+To rename the file/dir. 
+----------------------- 
+Syn $mv <old file/dir name> <new file/dir name> 
+Eg $mv hai hello 
+To move the file from one dir to another dir. 
+---------------------------------------------- 
+Syn $mv <source filename> <destination dir name> 
+Eg $mv hai sam 
+To move the dir from one dir to another dir. 
+---------------------------------------------- 
+Syn $mv <source dir name> <destination dir name> 
+Eg $mv ram sam 
+To get the help for the command 
+------------------------------- 
+Syn $man <command> 
+Eg $man mkdir 
+ 
+Syn $info <command> 
+Eg $info cat 
+Syn $whatis <command> 
+Eg $whatis rm 
+Syn $<command> --help 
+Eg $ls --help 
+ ******** 
+ * LAB3 * 
+ ******** 
+To see all available shells in linux 
+------------------------------------ 
+$cat /etc/shells 
+o/p 
+--- 
+/bin/sh 
+/bin/bash 
+/sbin/nologin 
+/bin/bash2 
+/bin/ash 
+/bin/bsh 
+/bin/tcsh 
+/bin/csh 
+Note: "/bin" is a dir that contains all shell files
+ "BASH" is a linux's default shell 
+ "/sbin/nologin" is not a shell 
+ 
+To change a shell temporarily 
+----------------------------- 
+Syn $<shell name> 
+Eg $sh 
+To return to a bash shell 
+------------------------- 
+$bash 
+To change a shell permanently 
+----------------------------- 
+Syn $chsh -s <shell name with location> 
+Eg $chsh -s /bin/tcsh 
+Note: Restart a system (#init 6) 
+To see a current shell 
+---------------------- 
+$echo $SHELL 
+To see all previous worked commands 
+----------------------------------- 
+$history 
+ 
+To see page by page 
+------------------- 
+$history | more 
+To execute a command from a history 
+----------------------------------- 
+$!<comman ID> 
+To clear the history 
+-------------------- 
+$history -c 
+To change the prompt temporarily 
+-------------------------------- 
+Syn $PS1="<prompt>" 
+Eg $PS1="[mpk]" 
+Note: The PS1 variable belongs to bash shell 
+To return to a bash shell prompt 
+-------------------------------- 
+$bash 
+ ********* 
+ * LAB4 * 
+ ********* 
+To count the number of words, lines, characters in a file 
+--------------------------------------------------------- 
+Syn $wc <filename> 
+Eg $wc hai 
+To count the number of words only 
+--------------------------------- 
+Syn $wc -w <filename> 
+Eg $wc -w hai 
+To count the number of lines only 
+--------------------------------- 
+Syn $wc -l <filename> 
+Eg $wc -l hai 
+To count the number of characters only 
+-------------------------------------- 
+Syn $wc -c <filename> 
+Eg $wc -c hai 
+To find a pattern is available or not in a file 
+------------------------------------------------ 
+Syn $grep <search word> <filename> 
+Eg $grep welcome hai 
+To find a word how many times it appears in a file using pipe 
+------------------------------------------------------------- 
+Syn $grep <search word> <filename> | wc -w 
+Eg $grep welcome hai | wc -w 
+To print the first 10 lines of a file 
+------------------------------------- 
+Syn $head <filename> 
+Eg $head hai 
+To print the last 10 lines of a file 
+------------------------------------- 
+Syn $tail <filename> 
+Eg $tail hai 
+To print a particular number of lines in a file from top 
+-------------------------------------------------------- 
+Syn $head -<number of lines> <file name> 
+Eg $head -5 hai 
+To print a particular number of lines in a file from bottom 
+----------------------------------------------------------- 
+Syn $tail -<number of lines> <file name> 
+Eg $tail -5 hai 
+To redirect the output of command to another file 
+------------------------------------------------- 
+Syn $<command> > <filename> 
+Eg $date > hello 
+ ******** 
+ * LAB5 * 
+ ******** 
+Write a format of long listing 
+------------------------------ 
+- rwxr-xr-x 1 root root 3302 Mar 1 16:19 lab9.doc 
+d rwxr-xr-x 1 root root 3000 Mar 1 16:20 lab 
+- ---------- - ---- ---- ---- ------------ -------- 
+1 2 3 4 5 6 7 8 
+1. - ->Represents a file 
+ d ->Represents a dir 
+2. File/Dir permission 
+3. Number of links 
+4. User name 
+5. Group name 
+6. File size in bytes 
+7. Month,date and time of creation 
+8. Fie/Dir name 
+How will identify files and directories 
+---------------------------------------- 
+Method 1 
+-------- 
+File/Dir permission field in the long list information can differentiate a 
+file/dir 
+- rwxr-xr-x -> Represents a file 
+d rwxr-xr-x -> Represents a dir 
+Method 2 
+-------- 
+The output of "ls" command can be used for differentiate a file/dir 
+Blue colour -> Represents a dir 
+White colour -> Represents a file 
+File/Dir permissions 
+-------------------- 
+User types 
+---------- 
+* User or owner 
+* Group 
+* Others 
+Permission types 
+---------------- 
+* Read 
+* Write 
+* Execute 
+Numeric values for permissions 
+------------------------------ 
+Read -> 4 
+Write -> 2 
+Excecute -> 1 
+Read+Write -> 6 
+Read+Execute -> 5 
+Read+Write+Execute -> 7 
+Umask 
+----- 
+The default file/dir permission is decided by this umask value. 
+To see the umask value 
+---------------------- 
+$umask 
+Umask permission value 
+---------------------- 
+For a File -> 666 
+For a Dir -> 777 
+Default umask value 
+------------------- 
+For a user -> 002 
+For a root -> 022 
+Default File/Dir permission for a user 
+-------------------------------------- 
+For a File 
+---------- 
+Umask permission value for a file -> 666 
+Umask value for a user -> 002 (-) 
+ --- 
+ 664 
+ --- 
+ ***************** 
+ * - rw- rw- r-- * 
+ ***************** 
+ - -> Represents a file 
+ rw- -> User permission 
+ rw- -> Group permission 
+ r-- -> Others permission 
+For a Dir 
+---------- 
+Umask permission value for a dir -> 777 
+Umask value for a user -> 002 (-) 
+ --- 
+ 775 
+ --- 
+ ***************** 
+ * d rwx rwx r-x * 
+ ***************** 
+ d -> Represents a dir 
+ rwx -> User permission 
+ rwx -> Group permission 
+ r-x -> Others permission 
+Default File/Dir permission for a root 
+-------------------------------------- 
+For a File 
+---------- 
+Umask permission value for a file -> 666 
+Umask value for a root -> 022 (-) 
+ --- 
+ 644 
+ --- 
+ ***************** 
+ * - rw- r-- r-- * 
+ ***************** 
+ - -> Represents a file 
+ rw- -> User permission 
+ r-- -> Group permission 
+ r-- -> Others permission 
+For a Dir 
+---------- 
+Umask permission value for a dir -> 777 
+Umask value for a root -> 022 (-) 
+ --- 
+ 755 
+ --- 
+ ***************** 
+ * d rwx r-x r-x * 
+ ***************** 
+ - -> Represents a dir 
+ rwx -> User permission 
+ r-x -> Group permission 
+ r-x -> Others permission 
+To change a umask value temporarily 
+------------------------------------ 
+Syn $umask <value> 
+Eg $umask 000 
+To see a current umask value 
+---------------------------- 
+$umask 
+To change a permission for a file/dir 
+------------------------------------- 
+Syn $chmod <u><g><o> <file/dir name> 
+Eg $chmod 777 hai 
+ (or) 
+Eg1 $chmod a-w <file name> -> It removes write permission for all 
+Eg2 $chmod o-x <file name> -> It removes execute permission for others 
+Eg3 $chmod go-rwx <file name> -> It removes read,write and execute permission 
+ for group and others 
+Eg4 $chmod u+rw <file name> -> It adds read and write permission to a user 
+Eg5 $chmod a+x <file name> -> It adds execute permission for all 
+Eg6 $chmod g+rx <file name> -> It adds read and write permission for a group 
+To see a file/dir permissions 
+----------------------------- 
+For a file 
+---------- 
+Syn $ls -l <file name> 
+Eg $ls -l hai 
+For a dir 
+---------- 
+Syn $ls -ld <dir name> 
+Eg $ls -ld hello 
+To set an immutable flag on a file/dir 
+-------------------------------------- 
+Syn #chattr +i <file/dir name> 
+Eg #chattr +i hai 
+Note: With this immutable flag set,no one can write or delete a file/dir. 
+To remove an immutable flag on a file/dir 
+----------------------------------------- 
+Syn #chattr -i <file/dir name> 
+Eg #chattr -i hai 
+To list the attributes of a file/dir 
+------------------------------------ 
+Syn $lsattr <file/dir name> 
+ ********* 
+ * LAB6 * 
+ ********* 
+VI editor 
+---------- 
+To open a new file in vi editor 
+------------------------------- 
+Syn $vi <filename> 
+Eg $vi hai 
+To insert a contents 
+-------------------- 
+Press "i" 
+To save and exit a file 
+----------------------- 
+press "Esc" 
+press "shift+;" ie ":" 
+type "x" 
+press "enter" 
+Eg :x 
+Number of ways to save and exit a file in VI 
+-------------------------------------------- 
+Press "Esc" first 
+ ZZ -> Save and Exit 
+ :w -> Save but continue editing 
+ :wq -> Same as ZZ 
+ :q -> Exit a file if no change is made 
+ :q! -> Exit a file without save even when the change is made 
+ :x -> Save and Exit 
+To run a command in an editor 
+----------------------------- 
+syn :!<command> 
+eg :!ls 
+To view the editor contents with line number 
+-------------------------------------------- 
+:se nu 
+To cut a line in a file 
+----------------------- 
+Place the cursor on the line 
+Press "Esc+dd" 
+To copy a line in a file 
+----------------------- 
+Place the cursor on the line 
+Press "Esc+yy" 
+To paste a line in a file 
+----------------------- 
+Place the cursor on the line 
+Press "Esc+p" 
+To Cut/Copy multiple lines in a file 
+------------------------------------ 
+Place a cursor on the line 
+Press "Esc" 
+Specify a number of lines to Cut/Copy by pressing a number 
+Press "dd" to cut and "yy" to copy 
+ Eg for Cut 10 lines 
+ ------------------- 
+ Esc+10+dd 
+ Eg for Copy 10 lines 
+ ------------------- 
+ Esc+10+yy 
+To Paste multiple lines 
+----------------------- 
+Press "Esc+p" 
+ ****************************
+ * LAB7. PROCESS MANAGEMENT *
+ ****************************
+To view the process of all users that are associated with a current terminal 
+---------------------------------------------------------------------------- 
+$ps -au 
+To select all process on the current terminal 
+--------------------------------------------- 
+$ps -eT 
+To print the process tree 
+------------------------- 
+$pstree 
+To print the process that is run by the particular user 
+------------------------------------------------------- 
+Syn $ps -u <Username> 
+Eg $ps -u root 
+To see a process ID of the current terminal 
+-------------------------------------------' 
+Syn $echo $$ 
+Eg o/p 2333 
+To kill or stop a process 
+------------------------- 
+Syn $kill -9 <ProcessID> 
+Eg $kill -9 2333 
+To view how many users are currently logged in 
+---------------------------------------------- 
+$who 
+To view last users login 
+------------------------ 
+$last 
+To list the environmental variables for a user currently logged in 
+------------------------------------------------------------------ 
+$env 
+The BASH Shell files 
+-------------------- 
+.bash_profile -> Personal initialization file executed for login shells 
+.bashrc -> The individual startup file 
+.bash_logout -> The individual login shell cleanup file,executed when a login 
+ shell exits 
+.bash_history -> Contains all previously worked commands(history) 
+To view the status of a virtual memory 
+-------------------------------------- 
+$vmstat 
+ ************************** 
+ * LAB8. MOUNTING DEVICES * 
+ ************************** 
+To mount a CDROM 
+---------------- 
+$mount /mnt/cdrom 
+To view the conetnts of CDROM 
+----------------------------- 
+$cd /mnt/cdrom 
+$ls 
+To unmount a CDROM 
+------------------ 
+$cd 
+$umount /mnt/cdrom 
+To eject a CDROM 
+---------------- 
+$eject 
+To close a CDROM 
+---------------- 
+$eject -t 
+To mount a floppy 
+----------------- 
+$mount /mnt/floppy 
+To view the conetnts of floppy 
+------------------------------ 
+$cd /mnt/floppy 
+$ls 
+To unmount a floppy 
+------------------- 
+$cd 
+$umount /mnt/floppy 
+To mount all drives,partitions and file systems 
+----------------------------------------------- 
+#mount -a 
+To unmount all drives, partitions and file systems 
+-------------------------------------------------- 
+#umount -a 
+Note 
+---- 
+The "/" and "proc" cannot be unmounted. 
+To mount a MS-DOS formatted floppy disk 
+--------------------------------------- 
+Syn #mount -t <file system> <deviceID> <mount point> 
+Eg #mount -t vfat /dev/fd0 /mnt/floppy 
+To crate an image of a disk 
+--------------------------- 
+Syn $dd if=<input file> of=<output file> 
+Eg $dd if=/dev/cdrom of=disk1.iso 
+To mount an NFS(Network File System) 
+------------------------------------ 
+Syn #mount <IPAddr of server:Shared dir> <mount point> 
+Eg #mount 200.200.200.6:/root/mpk /tmp 
+To see the NFS contents 
+----------------------- 
+Syn #cd <mount point> 
+Eg #cd /tmp 
+ ****************************** 
+ * LAB9. DISK PARTITION SETUP * 
+ ****************************** 
+To see a device ID, capacity and partitions of a hard disk 
+---------------------------------------------------------- 
+#fdisk -l 
+To enter into a disk partition setup 
+------------------------------------ 
+Syn #fdisk <hard disk ID> 
+Eg #fdisk /dev/hda 
+Note: /dev/hda -> Primary Master 
+ /dev/hdb -> Primary Slave 
+ /dev/hdc -> Secondary Master 
+ /dev/hdd -> Secondary Slave 
+To create a new partition 
+-------------------------- 
+Syn #fdisk <hard disk ID> 
+Eg #fdisk /dev/hda 
+Command (m for help): n 
+Command action 
+ l logical (5 or over) 
+ p primary partition (1-4) 
+Press "l" for logical and "p" for primary partition
+First cylinder (1746-4864, default 1746):<Enter> 
+Using default value 1746 
+Last cylinder or +size or +sizeM or +sizeK(1746-4864, default 4864): +<value>m 
+ Eg :+100m ->100MB 
+To print the partiton table 
+-------------------------- 
+Command (m for help): p 
+To change the partition system ID 
+--------------------------------- 
+Command (m for help): t 
+Partition number (1-8): 8 
+Hex code (type L to list codes): 8e 
+Changed system type of partition 8 to 8e (Linux LVM) 
+To write the partition table to disk and exit 
+--------------------------------------------- 
+Command (m for help): w 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+Note: If this command is not given after partioning, 
+ you need to restart your system. 
+To create the file system on the partition (format)
+---------------------------------------------------
+Syn #mkfs -t <file system> <partition ID> 
+Eg #mkfs -t ext3 /dev/hda8 
+To create a swap partition 
+-------------------------- 
+Syn #fdisk <hard disk ID> 
+Eg #fdisk /dev/hda 
+Command (m for help): n 
+Command action 
+ l logical (5 or over) 
+ p primary partition (1-4) 
+Press "l" for logiacl and "p" for primary partition
+First cylinder (1746-4864, default 1746):<Enter> 
+Using default value 1746 
+Last cylinder or +size or +sizeM or +sizeK(1746-4864, default 4864): +<value>m 
+ Eg :+100m ->100MB 
+ 
+To print the partiton table 
+-------------------------- 
+Command (m for help): p 
+To change the partition system ID 
+--------------------------------- 
+ 
+Command (m for help): t 
+Partition number (1-8): 9 
+Hex code (type L to list codes): 82 
+Changed system type of partition 8 to 82 (Linux swap) 
+To write the partition table to disk and exit 
+--------------------------------------------- 
+Command (m for help): w 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+To add a swap partition 
+----------------------- 
+Syn #mkswap -v1 <swap partition ID> 
+Eg #mkswap -v1 /dev/hda9 
+To add the swap partition to the "/etc/fstab" file 
+-------------------------------------------------- 
+#vi /etc/fstab 
+add to last line 
+---------------- 
+Syn 
+--- 
+<swap partition ID> <mount point> <file system> <options> <file system check> 
+Eg 
+-- 
+/dev/hda9 swap swap defaults 0 0 
+To save and exit 
+---------------- 
+:x 
+To activate all the swap partitions 
+----------------------------------- 
+#swapon -a 
+ **************************
+ * LAB10. SHELL SCRIPTING *
+ **************************
+1.Script to find the number of users logged in 
+-------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg1.sh 
+ Type 
+ ---- 
+ who | wc -l 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg1.sh 
+2.Script to find how many terminals that root has logged in 
+----------------------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg2.sh 
+ Type 
+ ---- 
+ who | grep root | wc -l 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg2.sh 
+3.Script to find username,login name,home dir,default shell for the user logged 
+in 
+------------------------------------------------------------------------------ 
+ Syn $vi <filename.sh> 
+ Eg $vi pg3.sh 
+ Type 
+ ---- 
+ echo $USER 
+ echo $HOME 
+ echo $LOGNAME 
+ echo $SHELL 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg3.sh 
+4.Script to calculate average of 5 numbers using arithmetic operation and binary 
+calculator 
+------------------------------------------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg4.sh 
+ Type 
+ ---- 
+ echo "Arithmetic Operation:" 
+ echo $[(10+10+10+10+10)/5] 
+ echo "Binay Calculator:" 
+ s=`echo 10.0+10.0+10.0+10.0+10.0 | bc` 
+ t=`echo $s/5.0 | bc` 
+ echo $t 
+ 
+ To save and exit 
+ ---------------- 
+ :x 
+To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg4.sh 
+5.Script to find that entered character is vowel or not 
+------------------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg5.sh 
+ Type 
+ ---- 
+ echo "enter the character" 
+ read ch 
+ case "$ch" in 
+ a|A|e|E|i|I|o|O|u|U) echo "entered character is a vowel";; 
+ *) echo "entered character is not a vowel";; 
+ esac 
+ 
+To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg5.sh 
+6.Script to find the greatest of three numbers 
+---------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg6.sh 
+ Type 
+ ---- 
+ echo "enter the three numbers: a b c:" 
+ read a b c 
+ if [ $a -gt $b -a $a -gt $c ] 
+ then 
+ echo "the a is greatest" 
+ else 
+ if [ $b -gt $c ] 
+ then 
+ echo "the b is greatest" 
+ else 
+ echo "c is greatest" 
+ fi 
+ fi 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg6.sh 
+7.Script to do arithmetic operation for non zero 
+------------------------------------------------ 
+ Syn $vi <filename.sh> 
+ Eg $vi pg7.sh 
+ Type 
+ ---- 
+ echo "enter the two numbers: a b :" 
+ read a b 
+ if [ $a -eq 0 -o $b -eq 0 ] 
+ then 
+ echo "enter the non zero numbers" 
+ else 
+ echo "the addition is $[a+b]" 
+ fi 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg7.sh 
+8.Script to do arithmetic operation using switch case in menu drive style 
+------------------------------------------------------------------------- 
+ Syn $vi <filename.sh> 
+ Eg $vi pg8.sh 
+ Type 
+ ---- 
+ echo "enter two numbrs:a b:" 
+ read a b 
+ echo "1.add" 
+ echo "2.sub" 
+ echo "3.mul" 
+ echo "4.div" 
+ echo "enter your choice:" 
+ read ch 
+ case "$ch" in 
+ 1) echo "the addition is $[a+b]";; 
+ 2) echo "the substraction is $[a-b]";; 
+ 3) echo "the multiplication is $[a*b]";; 
+ 4) echo "the division is $[a/b]";; 
+ *) echo "invalid choice";; 
+ esac 
+ To save and exit 
+ ---------------- 
+ :x 
+ To compile and run a program 
+ ---------------------------- 
+ Syn $sh <filename.sh> 
+ Eg $sh pg8.sh 
+ ************************ 
+ * LAB11. INSTALLATION * 
+ ************************ 
+Hardware requirements for Fedora Core installation 
+-------------------------------------------------- 
+Processor -> Min. 200MHz for Text Mode 
+ Min. 400MHz for GUI Mode 
+RAM -> Min. 64MB for Text Mode 
+ Min. 192MB for GUI Mode 
+ But 256MB is rescommended for GUI Mode
+Harddisk -> Personal Desktop (1.9GB) 
+ Workstation (2.4GB) 
+ Server (870MB) 
+ Custom-Everything (5.3GB) 
+ Custom-Minimal (520MB) 
+Fedora Core installation sources 
+-------------------------------- 
+* Local CDROM 
+* Hard drive 
+* NFS image 
+* FTP 
+* HTTP 
+Important installation modes 
+---------------------------- 
+boot: linux text -> To run installation in text mode 
+boot: linux lowers -> To run installation in 640x480 screen resolution 
+boot: linux noprobe -> Do not probe to dermine hardware 
+boot: linux mediacheck -> To check the CDs before installation 
+boot: linux recue -> Not a installaton method,used for troubleshooting 
+boot: linux askmethod -> Makes the system to ask where to install from 
+Procedure for installation through CDROM 
+---------------------------------------- 
+1. Insert Fedora Core CD-1 
+2. Reboot your system 
+3. At "boot:" prompt 
+ * Press "Enetr" to install in GUI mode 
+ * Type "linux text" to install in text mode 
+4. Media check 
+5. Language selection 
+6. Keyboard configuration 
+7. Mouse configuration 
+8. Upgrade or Fresh install 
+9. Installation type 
+10. Disk partitioning setup 
+11. Disk druid 
+12. Boot loader configuration 
+13. Network configuration 
+14. Firewall configuration 
+15. Additional language support 
+16. Time zone selection 
+17. Set root password 
+18. Package selection 
+19. About to install 
+20. Finish installing 
+Procedure for installation through NFS Image 
+-------------------------------------------- 
+1. Insert Fedora Core CD-1 
+2. Reboot your system 
+3. At "boot:" prompt 
+ * Type "linux askmethod" 
+4. Language selection 
+5. Keyboard configuration 
+6. Select an installation methos as "NFS Image" 
+7. Configure TCP/IP 
+8. NFS server name : 200.200.200.6 
+ Red Hat directory : /install/install 
+9. Do the remaining procedures as in Installation through CDROM. 
+ 
+ *************************** 
+ * LAB12. MANAGING STARTUP * 
+ *************************** 
+----------- 
+SEQUENCE-1 
+----------- 
+To see the status of all system services 
+---------------------------------------- 
+#chkconfig --list 
+ To see page by page 
+ ------------------- 
+ #chkconfig --list | more 
+To see the status of a particular service 
+----------------------------------------- 
+Syn #chkconfig --list <service name> 
+Eg #chkconfig --list nfs 
+o/p nfs 0:off 1:off 2:off 3:on 4:on 5:on 6:off 
+Note: 0,1,2,3,4,5,6 are runlevels and "on","off" represents the status of the 
+ service at a runlevel. 
+To turn on a service at a particular runlevel during startup 
+------------------------------------------------------------ 
+Syn #chkconfig --level <levels> <service name> <state> 
+Eg #chkconfig --level 35 iptables on 
+Note: 35 specify both the runlevels 3 and 5. 
+To turn off a service at a particular runlevel during startup 
+------------------------------------------------------------- 
+Syn #chkconfig --level <levels> <service name> <state> 
+Eg #chkconfig --level 35 nfs off 
+To add a new service for a management by chkconfig 
+-------------------------------------------------- 
+Syn #chkconfig --add <new service name> 
+Eg #chkconfig --add ntpd 
+To remove a service for chkconfig management 
+-------------------------------------------- 
+Syn #chkconfig --del <service name> 
+Eg #chkconfig --del ntpd 
+----------- 
+SEQUENCE-2 
+----------- 
+To change the system banner 
+--------------------------- 
+#vi /etc/issue 
+*Type some information 
+To save and exit 
+---------------- 
+:x 
+Note: Logout to see a system banner 
+To display the last reboot time in system banner 
+------------------------------------------------ 
+#vi /etc/rc.local 
+Type 
+---- 
+echo "last reboot complete at $(/bin/date)" > /etc/issue 
+To save and exit 
+---------------- 
+:x 
+Note: Restart the system (#init 6) and check the system banner 
+----------- 
+SEQUENCE-3 
+----------- 
+Linux runlevels 
+--------------- 
+ 0 - Shutdown 
+ 1 - Single user mode 
+ 2 - Multiuser, without NFS 
+ 3 - Multiuser mode with NFS(Text mode) 
+ 4 - unused 
+ 5 - GUI Mode 
+ 6 - reboot 
+To change the runlevel from 5 to 3 
+---------------------------------- 
+#vi /etc/inittab 
+Edit line 18 
+------------ 
+ id:5:initdefault: 
+Note: change the 5 to 3 in the above line. 
+To save and exit 
+---------------- 
+:x 
+To see a current runlevel 
+------------------------- 
+#runlevel 
+----------- 
+SEQUENCE-4 
+----------- 
+To set a message to display after login 
+--------------------------------------- 
+#vi /etc/motd 
+*Type some information 
+To save and exit 
+---------------- 
+:x 
+Note: Logout and login again to see a message 
+ 
+----------- 
+SEQUENCE-5 
+----------- 
+To change a runlevels at boot time 
+---------------------------------- 
+1. Select the linux menu 
+2. Press "e" to edit 
+3. Select the second menu 
+4. Press "e" to edit 
+5. Add the runlevel number at the end of the line(Eg 1,2,3,4,5) 
+6. Press "enter" 
+7. Press "b" to boot 
+ 
+ ********* 
+ * LAB13 * 
+ ********* 
+----------- 
+SEQUENCE-1 
+----------- 
+To see a device ID,capacity and partitions of a hard disk 
+--------------------------------------------------------- 
+#fdisk -l 
+To create a new partition 
+-------------------------- 
+Syn #fdisk <hard disk ID> 
+Eg #fdisk /dev/hda 
+Command (m for help): n 
+Command action 
+ l logical (5 or over) 
+ p primary partition (1-4) 
+Press "l" for logical and "p" for primary partition
+First cylinder ():<Enter> 
+Last cylinder ():+<value>m 
+ Eg :+100m ->100MB 
+To print the partiton table 
+-------------------------- 
+Command (m for help): p 
+To write the partition table to disk and exit 
+--------------------------------------------- 
+Command (m for help): w 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+Note: If this command is not given after partioning, 
+ you need to restart your system. 
+To create an ext2 file system on the partiton with 2K 
+blocks and one inode per every 4K of file system 
+----------------------------------------------------- 
+Syn #mke2fs -T <file system> -b <block size> -i <inode per block> <partition ID> 
+ in bytes 
+Eg #mke2fs -T ext2 -b 2048 -i 4096 /dev/hda8 
+Note 
+---- 
+1024 Bytes = 1KB 
+2048 Bytes = 2KB 
+4096 Bytes = 4KB 
+To mount the newly created partition on "/data" dir
+---------------------------------------------------
+ #mkdir /data 
+Syn #mount <partition ID> <mount point> 
+Eg #mount /dev/hda8 /data 
+To copy the "/etc/passwd" file into "/data" dir 
+----------------------------------------------- 
+#cp /etc/passwd /data 
+To see the files in a "/data" dir 
+--------------------------------- 
+#cd /data 
+#ls 
+To unmount "/data" dir 
+---------------------- 
+#cd 
+#umount /data 
+To add a label to a new partition 
+--------------------------------- 
+Syn #e2label <partition ID> <label name> 
+Eg #e2label /dev/hda8 hai 
+To see a label of a partition 
+----------------------------- 
+Syn #e2label <partition ID> 
+Eg #e2label /dev/hda8 
+o/p hai 
+To mount the partition permanently in "/etc/fstab" by using the label 
+--------------------------------------------------------------------- 
+Add to last line 
+---------------- 
+Syn 
+--- 
+LABEL=<label name> <mount point> <file system> <options> <file system check> 
+Eg 
+-- 
+LABEL=hai /data ext2 defaults 0 0 
+To save and exit 
+---------------- 
+:x 
+----------- 
+SEQUENCE-2 
+----------- 
+To write the buffered data in memory to disk 
+-------------------------------------------- 
+#sync 
+To reboot a system with force 
+----------------------------- 
+#reboot -f 
+To convert the ext2 file system into ext3 
+----------------------------------------- 
+Syn #tune2fs -j <Partition ID> 
+Eg #tune2fs -j /dev/hda8 
+Files used for automounting file system 
+---------------------------------------- 
+/etc/auto.master 
+/etc/auto.misc 
+ ******************************* 
+ * LAB14 NETWORK CONFIGURATION * 
+ ******************************* 
+----------- 
+SEQUENCE-1 
+----------- 
+To set an IP address 
+-------------------- 
+#netconfig 
+* Selecet "Yes" to "Networking" 
+* Enter the IP address (Eg. 200.200.200.10) 
+* Press "Enter" for default "Subnet mask" 
+* Press "Enter" for default "Gateway" 
+* Press "Enter" for default "Primary name server" 
+* Press "Ok" 
+To start networking 
+------------------- 
+#service network restart 
+To see an IP address 
+-------------------- 
+#ifconfig 
+To turn off an interface 
+------------------------ 
+Syn #ifdown <interface name> 
+Eg #ifdown eth0 
+To turn on an interface 
+------------------------ 
+Syn #ifup <interface name> 
+Eg #ifup eth0 
+To change the IP address by editing the IP address configuration file 
+--------------------------------------------------------------------- 
+#vi /etc/sysconfig/network-scripts/ifcfg-eth0 
+Edit 
+---- 
+IPADDR=200.200.200.10 
+Note: Change the old IP to new IP 
+To save and exit 
+---------------- 
+:x 
+To start networking 
+------------------- 
+#service network restart 
+To verify the connection to the server 
+-------------------------------------- 
+Syn #ping <IP address of server> 
+Eg #ping 200.200.200.6 
+ ********* 
+ * LAB15 * 
+ ********* 
+--------------------------------- 
+SEQUENCE-1 Kickstart installation 
+--------------------------------- 
+This kickstart installation is used to install linux on the systems that 
+are of same configurations. 
+* Create one partition and mount it under a dir "/install". 
+To create a disk images of 3 CDs 
+-------------------------------- 
+CD-1 
+---- 
+* Insert a FC1 CD-1 
+* #dd if=/dev/cdrom of=/install/disk1.iso 
+CD-2 
+---- 
+* Insert a FC1 CD-2 
+* #dd if=/dev/cdrom of=/install/disk2.iso 
+CD-3 
+---- 
+* Insert a FC1 CD-3 
+* #dd if=/dev/cdrom of=/install/disk3.iso 
+To create a kickstart configuretion file 
+---------------------------------------- 
+#cp /root/anaconda-ks.cfg ks.cfg 
+To open a "ks.cfg" file 
+----------------------- 
+#vi /root/ks.cfg 
+Add at line 4 
+------------- 
+Syn: nfs --server <IP of your system> --dir <installation dir> 
+Eg : nfs --server 200.200.200.6 --dir /install 
+Edit line 10 
+------------ 
+Syn: --ip <new IP address> 
+Eg : --ip 200.200.200.10 
+Edit line 20,21,22 
+------------------ 
+* remove the hash (#) in lines 20,21,22 
+To save and exit 
+---------------- 
+:x 
+To copy the "ks.cfg" file to a floppy disk 
+------------------------------------------- 
+#fdformat /dev/fd0 -> To fomat a floppy 
+#mkfs -t ext3 /dev/fd0 -> To create an ext3 file system 
+#mount /mnt/floppy -> To mount a floppy disk 
+#cp /root/ks.cfg /mnt/floppy -> To copy a ks.cfg file to a floppy 
+#umount /mnt/floppy -> To unmount a floppy 
+Server side (NFS-Network File System) 
+------------------------------------- 
+To export an installation dir 
+----------------------------- 
+#vi /etc/exports 
+Add 
+--- 
+/install *(ro) 
+To save and exit 
+---------------- 
+:x 
+To give a permission to a installation dir 
+------------------------------------------ 
+#chmod 777 /install 
+To start an NFS service 
+----------------------- 
+#service nfs restart 
+Client side 
+------------ 
+1. Insert Fedora Core CD-1 and your floppy disk 
+2. Reboot your system 
+3. At "boot:" prompt 
+ * Type "linux ks=floppy" 
+------------------------------------------- 
+SEQUENCE-2 Installing and dealing with RPM 
+------------------------------------------- 
+* Linux packages end with an extension RPM(Redhat Package Management) 
+Packages location in Fedora Core CDs 
+------------------------------------ 
+* Insert a Fedora Core CD 1 or 2 or 3 
+#mount /mnt/cdrom 
+#cd /mnt/cdrom 
+#cd Fedora/RPMS 
+#ls 
+o/p List of packages 
+ RPMS- Redhat Package Management System 
+To see all installed packages 
+----------------------------- 
+#rpm -qa 
+ To see page by page 
+ ------------------- 
+ #rpm -qa | more 
+To find whether a package is installed or not 
+--------------------------------------------- 
+Syn #rpm -qa | grep <short package name> 
+Eg #rpm -qa | grep nfs 
+o/p Installed package name 
+ qa- Query All 
+To display a information about a package 
+---------------------------------------- 
+Syn #rpm -qi <shot package name> 
+Eg #rpm -qi nfs-utils 
+ 
+qi- Query Info 
+To install a package 
+-------------------- 
+Syn #rpm -ivh <full package name with rpm> 
+Eg #rpm -ivh nfs-utils-1.0.6-1.i386.rpm 
+i- Install 
+v- Verbose 
+h- Hash(#) 
+To install and upgrade a package 
+-------------------------------- 
+Syn #rpm -Uvh <full package name with rpm> 
+Eg #rpm -Uvh nfs-utils-1.0.6-1.i386.rpm 
+U- Upgrade 
+v- Verbose 
+h- Hash(#) 
+To fresen a package 
+-------------------- 
+Syn #rpm -Fvh <full package name with rpm> 
+Eg #rpm -Fvh nfs-utils-1.0.6-1.i386.rpm 
+F- Fresen 
+v- Verbose 
+h- Hash(#) 
+Note: The above command will upgrade a package only if an earlier 
+ version currentlly exists 
+To replace a package 
+-------------------- 
+Syn #rpm -ivh --replacepkgs <full package name with rpm> 
+Eg #rpm -ivh --replacepkgs nfs-utils-1.0.6-1.i386.rpm 
+To install a package without dependency 
+--------------------------------------- 
+Syn #rpm -ivh --nodeps <full package name with rpm>
+Eg #rpm -ivh --nodeps nfs-utils-1.0.6-1.i386.rpm 
+To erase or uninstall a package 
+------------------------------- 
+Syn #rpm -e <installed package name> 
+Eg #rpm -e nfs-utils-1.0.6-1 
+Note: To find an installed package name 
+ --------------------------------- 
+ Syn #rpm -qa | grep <short package name> 
+ Eg #rpm -qa | grep nfs 
+To erase or uninstall a package without dependency 
+-------------------------------------------------- 
+Syn #rpm -e --nodeps <installed package name> 
+Eg #rpm -e --nodeps nfs-utils-1.0.6-1 
+Note: When you upgrade or erase a package the older version configuration 
+ files are stored with an ".rpmsave" exension 
+To list files in a package 
+-------------------------- 
+Syn #rpm -ql <installed package name> 
+Eg #rpm -ql nfs-utils-1.0.6-1 
+o/p List of files 
+ ql- Query List 
+To find a package that owns a file 
+---------------------------------- 
+Syn #rpm -qf <filename> 
+Eg #rpm -qf /etc/exports 
+o/p Package name 
+ qf-Query Find 
+ ********* 
+ * LAB16 * 
+ ********* 
+---------------------------------------- 
+SEQUENCE-1 User and Group Administration 
+---------------------------------------- 
+To create a user 
+---------------- 
+Syn #useradd <user name> 
+Eg #useradd prakash 
+Note: You can also use "adduser" command instead of "useradd" 
+To set/change a password for a user 
+------------------------------------ 
+Syn #passwd <user name> 
+Eg #passwd prakash 
+o/p 
+ New password : 
+ Retype new password : 
+To see a user details 
+--------------------- 
+#vi /etc/passwd 
+Sample entry in "/etc/passwd" 
+----------------------------- 
+trec6:x:500:500:myuser:/home/trec6:/bin/bash 
+----- - --- --- ------ ----------- --------- 
+ 1 2 3 4 5 6 7 
+1. User name 
+2. Represents the user's encrypted password is stored in "/etc/shadow" 
+3. User ID 
+4. Group ID 
+5. Comment about a user 
+6. User's home dir 
+7. User's shell 
+To exit 
+------- 
+* Press "Ctrl+z" 
+Note: * Root's UserID and GroupID is 0 (Zero) 
+ * Normal user's UserID and GroupID starts from 500 
+ * If the user has a same UserID and GroupID, then the user 
+ doesn't belong to any group ( Eg trec1:x:500:500 ) 
+ * If the user has a different UserID and GroupID, then the user 
+ belongs to a particular group ( Eg trec1:x:500:501 ) 
+To see a UserID and GroupID of a user 
+------------------------------------- 
+* login as a user 
+$id 
+To see the encrypted password of users 
+-------------------------------------- 
+#vi /etc/shadow 
+To exit 
+------- 
+* Press "Ctrl+z" 
+To modify the user account 
+-------------------------- 
+* Use "usermod" instead of "useradd" 
+To set a comment for an existing user 
+------------------------------------- 
+Syn #usermod -c "<comment>" <existing user name> 
+Eg #usermod -c myuser prakash 
+To set a null password for a user ( To remove a password ) 
+---------------------------------------------------------- 
+Syn #passwd -d <user name> 
+Eg #passwd -d prakash 
+To lock a user account 
+---------------------- 
+Syn #passwd -l <user name> 
+Eg #passwd -l prakash 
+To unlock a user account 
+---------------------- 
+Syn #passwd -uf <user name> 
+Eg #passwd -uf prakash 
+To lock all the users 
+--------------------- 
+#touch /etc/nologin 
+To unlock all the users 
+----------------------- 
+#rm /etc/nologin 
+To delete a user account ( But maintain the user's home dir and files ) 
+----------------------------------------------------------------------- 
+Syn #userdel <user name> 
+Eg #userdel prakash 
+To delete a user account along with home dir 
+-------------------------------------------- 
+Syn #userdel -r <user name> 
+Eg #userdel -r kumar 
+To create a group 
+----------------- 
+Syn #groupadd <group name> 
+Eg #groupadd trecstep 
+To see a group details 
+---------------------- 
+#vi /etc/group 
+To exit 
+------- 
+Ctrl+z 
+To create a group with specific GroupID 
+--------------------------------------- 
+Syn #groupadd -g <groupID> <group name> 
+Eg #groupadd -g 506 college 
+To add a new user to a group 
+---------------------------- 
+Syn #useradd -g <group name> <user name> 
+Eg #useradd -g trecstep hello 
+To add an existing user to a group 
+---------------------------------- 
+Syn #usermod -g <group name> <user name> 
+Eg #usermod -g trecstep prakash 
+To add a supplementary group for a user 
+--------------------------------------- 
+Syn #useradd -G <group name seperated> <user name>
+ with commas 
+Eg #useradd -G trecstep,college trec1 
+To delete a group 
+----------------- 
+Syn #groupdel <group name> 
+Eg #groupdel trecstep 
+Note: All the users within a group must be deleted first 
+To change the ownership of a file 
+--------------------------------- 
+Syn #chown <user name> <file/dir name> 
+Eg #chown prakash hai 
+To change group ownership of a file 
+----------------------------------- 
+Syn #chown <group name> <file/dir name> 
+Eg #chown trecstep hai 
+To view a user and group name of a file/dir 
+------------------------------------------ 
+Syn1 #ls -l <file name> 
+Syn2 #ls -ld <dir name> 
+To set a SUID for a file/dir 
+---------------------------- 
+Syn #chmod u+s <file/dir name> 
+Eg #chmod u+s hai 
+Note: If the SUID bit is set on a file/dir it will appear in a red 
+ background and it will run with a permission of it's owner 
+To set a SGID for a file/dir 
+---------------------------- 
+Syn #chmod g+s <file/dir name> 
+Eg #chmod g+s hello 
+Note: If the SGID bit is set on a file/dir it will appear in a yellow 
+ background and it will run with a permission of it's group 
+To switch user 
+-------------- 
+Syn #su - <user name> 
+Eg1 #su - trec1 
+Eg2 $su - root 
+Note: To switch to a root user simply use "su -" 
+ Eg $su - 
+ ************************************** 
+ * LAB17. PRINTING AND ADMINISTRATION * 
+ ************************************** 
+------------------------ 
+SEQUENCE-1 Using Crontab 
+------------------------ 
+To set a cron job for a user to run every 10 minutes between 8AM to 5PM 
+----------------------------------------------------------------------- 
+Syn #crontab -e -u <username> 
+Eg #crontab -e -u trec1 
+Type 
+---- 
+Syn * * * * * <command> > <terminal ID> 
+ - - - - - 
+ 1 2 3 4 5 
+1. Minutes (0-59) 
+2. Hours (0-23) 
+3. Date (1-31) 
+4. Month (1-12) 
+5. Weekdays (0-7) 
+ 0 and 7 represens a sunday 
+Eg */10 8-17 * * * echo "hai" > /dev/tty1 
+ ---- ---- 
+ 1 2 
+1. Specifies every 10 minutes 
+2. Specifies the hours between 8AM to 5PM 
+To save 
+------- 
+:x 
+To start a crond service 
+------------------------ 
+#service crond restart 
+Note: Login as a user to check whether a cron job will run at a 
+ particular time or not 
+To send a output from a cron job to user's mail address 
+------------------------------------------------------- 
+Syn #crontab -e -u <username> 
+Eg #crontab -e -u trec1 
+Type 
+---- 
+SHELL=/bin/bash 
+PATH=/sbin:/bin:/usr/sbin:/usr/bin 
+MAILTO="<username>" 
+HOME=<users home dir> 
+Note: Add the DNS (Domain Name Service) server IP and domainname to 
+ /etc/resolv.conf 
+ #vi /etc/resolv.conf 
+ Edit 
+ ---- 
+ Syn 
+ --- 
+ nameserver <IP address of DNS> 
+ domain <Domain name of DNS> 
+ Eg 
+ -- 
+ nameserver 200.200.200.6 
+ domain step.com 
+ 
+ To save 
+ ------- 
+ :x 
+To list the jobs in a crontab 
+----------------------------- 
+#crontab -l 
+To delete all jobs in a crontab 
+------------------------------- 
+#crontab -r 
+--------------------------------------------------------------------- 
+SEQUENCE-2 Setting up a printer and administering a printer with CUPS 
+--------------------------------------------------------------------- 
+CUPS - Common Unix Printing Service 
+1. As root run the "redhat-config-printer" in text mode 
+2. Select "New" and press "Enter" 
+3. Type "lp0" in the "Queue Name" and select "Local Printer Device" for 
+ the "Queue Type" 
+4. Select "Next" and press "Enter" 
+5. Select "/dev/lp0" and select "Next" 
+6. Select "Postscript Printer" and select "Next" 
+7. Select "Finish" and select "Exit" 
+8. Select "Yes" to save changes 
+To print a file 
+--------------- 
+Syn #lp <filename> 
+Eg #lp install.log 
+To see a status of a printer 
+---------------------------- 
+#lpstat 
+To cancel a print job 
+--------------------- 
+Syn #cancel <job ID> 
+Eg #cancel 1 
+ *************************** 
+ * LAB18. X WINDOW SYSTEMS * 
+ *************************** 
+To create a executable file in /etc/X11/xinit/xinitrc.d 
+------------------------------------------------------- 
+#cd /etc/X11/xinit/xinitrc.d 
+#vi xterm.sh 
+Type 
+---- 
+#! /bin/bash 
+xterm & 
+To save and exit 
+---------------- 
+:x 
+To give an executable write to a file 
+------------------------------------- 
+Syn #chmod u+x <file name> 
+Eg #chmod u+x xterm.sh 
+Note: Restart the system and login in a GUI mode as a user "root", the "xterm" 
+ application will open automatically 
+To start a GUI mode from a text mode 
+------------------------------------ 
+#startx 
+To create a user and create a xsession file in his home dir 
+----------------------------------------------------------- 
+Syn #useradd <user name> 
+Eg #useradd hai 
+To disable a password 
+--------------------- 
+Syn #passwd -d <user name> 
+Eg #passwd -d hai 
+To create a xsession file 
+------------------------- 
+Note: Login as a user "hai" 
+ $vi .xession 
+ Type 
+ ---- 
+ #! /bin/bash 
+ gnome-terminal & 
+ firefox & 
+ exec metacity 
+ To save and exit 
+ ---------------- 
+ :x 
+To give an executable write to a file 
+------------------------------------- 
+Syn $chmod u+x <file name> 
+Eg $chmod u+x .xsession 
+Note: Restart the system and login in a GUI mode as a user "hai" 
+ and observe the changes 
+ ****************************************** 
+ * LAB19. ADVANCED FILE SYSTEM MANAGEMENT * 
+ ****************************************** 
+-------------------------------------------- 
+SEQUENCE-1 Creating logical volume with LVM 
+-------------------------------------------- 
+LVM (Logical Volume Management) 
+------------------------------- 
+It enables us to resize our partitions without having to modify the partition 
+tables on a harddisk. 
+To create two partitions of 100MB capacity 
+------------------------------------------ 
+# fdisk /dev/hda 
+ 
+Command (m for help): n 
+First cylinder (): <Enter> 
+Last cylinder (): +100m 
+ 
+Command (m for help): n 
+First cylinder (): <Enter> 
+Last cylinder (): +100m 
+ 
+To see a partition table 
+------------------------ 
+Command (m for help): p 
+ 
+To change the partition system ID to Linux LVM 
+---------------------------------------------- 
+Command (m for help) : t 
+Partition number (1-6): 6 
+Hex code () : 8e 
+ 
+Command (m for help) : t 
+Partition number (1-6): 5 
+Hex code () : 8e 
+To see the partiton table 
+------------------------- 
+Command (m for help): p 
+To save and exit 
+---------------- 
+Command (m for help): w 
+ 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+To create an LVM database 
+------------------------- 
+# vgscan 
+To create a physical volume 
+--------------------------- 
+Syn #pvcreate <LinuxLVM partiton1> <LinuxLVM partition2> 
+Eg #pvcreate /dev/hda5 /dev/hda6 
+ 
+To create a volume group 
+------------------------ 
+Syn #vgcreate <volume group name> <physical volume1> <physical volume2> 
+Eg #vgcreate vg0 /dev/hda5 /dev/hda6 
+ 
+To see a details of a volume group 
+----------------------------------- 
+#vgdisplay 
+o/p 
+Free PE / Size 48 / 192 MB 
+ 
+To create a logical volume 
+-------------------------- 
+Syn #lvcreate -n <logical vol. name> -L <logical vol. size> <vol. group name> 
+Eg #lvcreate -n data -L 100M vg0 
+o/p 
+"/dev/vg0/data" successfully created 
+ 
+To see a details of a logical volume 
+------------------------------------ 
+Syn #lvdisplay <logical vol. ID> 
+Eg #lvdisplay /dev/vg0/data 
+o/p 
+LV Size 100 MB 
+ 
+To reduce the logical volume 
+---------------------------- 
+Syn #lvreduce -L <logical vol. size> <logical vol. ID> 
+Eg #lvreduce -L 50M /dev/vg0/data 
+o/p 
+do you really want to reduce "/dev/vg0/data"? [y/n]: y 
+Note: Use "lvdisplay" to check the new logical volume size 
+To extend a logical volume 
+--------------------------- 
+Syn #lvextend -L <logical vol. size> <logical vol. ID> 
+Eg #lvextend -L 100M /dev/vg0/data 
+Note: Use "lvdisplay" to check the new logical volume size 
+To create the file system on a logical volume 
+-------------------------------------------- 
+Syn #mkfs -j <logical vol. ID> 
+Eg #mkfs -j /dev/vg0/data 
+To mount a logical volume on a dir 
+---------------------------------- 
+#mkdir /hai 
+#vi /etc/fstab 
+ 
+Add to last line 
+---------------- 
+Syn 
+--- 
+<logical vol. ID> <mount point> <file system> <options> <file system check> 
+Eg 
+-- 
+/dev/vg0/data /hai ext3 defaults 0 0 
+To save and exit 
+---------------- 
+:x 
+To mount all partitons and file systems 
+--------------------------------------- 
+#mount -a 
+To verify the mount 
+-------------------- 
+#mount 
+To verify the size of a logical volume 
+-------------------------------------- 
+#df -h 
+To create a files on a logical volume 
+------------------------------------- 
+Syn #cd <mount point> 
+Eg #cd /hai 
+ #cat > a 
+ * Type the contents 
+ * Press "Ctrl+d" to save and exit 
+To unmount the logical volume 
+----------------------------- 
+Syn #umount <mount point> 
+Eg #umount /hai 
+o/p 
+do you really want to remove "/dev/vg0/data"? [y/n]: y 
+To remove the logical volume 
+---------------------------- 
+Syn #lvremove <logical vol. ID> 
+Eg #lvremove /dev/vg0/data 
+------------------------- 
+SEQUENCE-2 Software RAID 
+------------------------- 
+RAID (Redundant Array of Inexpensive Disks) 
+------------------------------------------- 
+RAID allows to use multiple physical drives to create a variety of logical 
+volumes that can mirror drives to provide fault tolerance or share data 
+across several physical drives to boost performance
+RAID level Description 
+---------- ----------- 
+ 0 Stripping 
+ 1 Mirroring 
+ 3 Stripping with dedicated parity 
+ 5 Stripping with distributed parity 
+To create two partitions of 100MB capacity 
+------------------------------------------ 
+#fdisk /dev/hda 
+ 
+Command (m for help): n 
+First cylinder (): <Enter> 
+Last cylinder (): +100m 
+ 
+Command (m for help): n 
+First cylinder (): <Enter> 
+Last cylinder (): +100m 
+ 
+To see a partition table 
+------------------------ 
+Command (m for help): p 
+ 
+To change the partition system ID to Linux RAID Auto Detect 
+----------------------------------------------------------- 
+Command (m for help) : t 
+Partition number (1-6): 6 
+Hex code () : fd 
+ 
+Command (m for help) : t 
+Partition number (1-6): 5 
+Hex code () : fd 
+To see the partiton table 
+------------------------- 
+Command (m for help): p 
+To save and exit 
+---------------- 
+Command (m for help): w 
+ 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+To create a file system on a partitions 
+--------------------------------------- 
+Syn #mkfs -t <file system> <Linux RAID partition> 
+Eg1 #mkfs -t ext3 /dev/hda5 
+Eg2 #mkfs -t ext3 /dev/hda6 
+To create a "/etc/raidtab" file 
+-------------------------------- 
+#cd /usr/share/doc/raidtools-1.00.3/ 
+#cp raid1.conf.sample /etc/raidtab 
+#vi /etc/raidtab 
+To create a "/etc/raidtab" file 
+------------------------------- 
+#vi /etc/raidtab 
+Edit 
+----- 
+raiddev /dev/md0 
+raid-level 1 
+nr-raid-disks 2 
+nr-spare-disks 0 
+chunk-size 4 
+ 
+device /dev/hda5 
+ --------- 
+raid-disk 0 
+ 
+device /dev/hda6 
+ --------- 
+raid-disk 1 
+ 
+To save and exit 
+---------------- 
+:x 
+To create a RAID device 
+----------------------- 
+Syn #mkraid --really-force <RAID device ID> 
+Eg #mkraid --really-force /dev/md0 
+To see a status of a RAID device 
+-------------------------------- 
+#cat /proc/mdstat 
+To mount a RAID device permanently 
+---------------------------------- 
+#mkdir /hello 
+#vi /etc/fstab 
+ 
+Add to last line 
+---------------- 
+Syn 
+--- 
+<RAID device ID> <mount point> <file system> <options> <file system check> 
+Eg 
+-- 
+/dev/md0 /hello ext3 defaults 0 0 
+To save and exit 
+---------------- 
+:x 
+To mount all partitons and file systems 
+--------------------------------------- 
+#mount -a 
+To verify the mount 
+-------------------- 
+#mount 
+To create a files on a RAID device 
+---------------------------------- 
+Syn #cd <mount point> 
+Eg #cd /hello 
+ #cat > a 
+ * Type the contents 
+ * Press "Ctrl+d" to save and exit 
+To verify whether both the partitions have the same data 
+-------------------------------------------------------- 
+#cd 
+#mkdir 5 
+#mkdir 6 
+#mount /dev/hda5 5 
+#mount /dev/hda6 6 
+#cd 5 
+#ls 
+o/p "a" 
+#cd 6 
+#ls 
+o/p "a" 
+To check whether a RAID is working or not by deleting one of 
+the RAID partitions 
+------------------------------------------------------------ 
+#fdisk /dev/hda 
+Command (m for help) : d 
+Partition number (1-6): 5 
+To see the partiton table 
+------------------------- 
+Command (m for help): p 
+To save and exit 
+---------------- 
+Command (m for help): w 
+ 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+Note: Go to a "/hello" dir and check whether the file is existing or not 
+---------------------- 
+SEQUENCE-3 Disk Quota 
+---------------------- 
+It is used to limit the amount of disk space that a user can consume 
+Note: Disk quota can be implemented only by creating a separate partition 
+ and mount it on a /home dir 
+To create a partition of 500MB capacity 
+------------------------------------------ 
+#fdisk /dev/hda 
+ 
+Command (m for help): n 
+First cylinder (): <Enter> 
+Last cylinder (): +500m 
+To see a partition table 
+------------------------ 
+Command (m for help): p 
+To save and exit 
+---------------- 
+Command (m for help): w 
+ 
+To refresh the partition table in memory 
+---------------------------------------- 
+#partprobe 
+To create a file system on a partition 
+--------------------------------------- 
+Syn #mkfs -t <file system> <partition ID> 
+Eg #mkfs -t ext3 /dev/hda5 
+To mount a parition permanently on /home dir 
+-------------------------------------------- 
+#vi /etc/fstab 
+ 
+Add to last line 
+---------------- 
+Syn 
+--- 
+<partition ID> <mount point> <file system> <options> <file system check> 
+Eg 
+-- 
+/dev/hda5 /home ext3 defaults,usrquota,grpquota 0 0
+To save and exit 
+---------------- 
+:x 
+To mount all partitions and file systems 
+--------------------------------------- 
+#mount -a 
+To verify the mount 
+-------------------- 
+#mount 
+To create a new user and disable a password 
+------------------------------------------- 
+Syn #useradd <user name> 
+Syn #passwd -d <user name> 
+Eg #useradd hai 
+Eg #passwd -d hai 
+To create a quota files on a /home dir 
+-------------------------------------- 
+#quotacheck -c /home 
+#touch /home/aquota.group 
+To create a disk usage table 
+---------------------------- 
+#quotacheck -vug /home 
+To start a quota service 
+------------------------ 
+#quotaon -avug 
+To edit a quota for a user 
+-------------------------- 
+Syn #edquota -u <user name> 
+Eg #edquota -u hai 
+o/p 
+Disk quotas for user hai (uid 500): 
+Filesystem blocks soft hard inodes soft hard 
+/dev/hda10 5 0 0 5 0 0 
+---------- ------ ----- ----- ------ ---- ---- 
+ 1 2 3 4 5 6 7 
+1. Partition on which the quota support is enabled 
+2. Number of blocks consumed (1 Block = 1KB) 
+3. Minimum blocks that a user can consume 
+4. Maximum blocks that a user can consume 
+5. Number of files created (Inode represents a file) 
+6. Minimum number of files that a user can create 
+7. Maximum number of files that a user can create 
+Note 
+---- 
+* Edit the zeros(0) under soft and hard limit as per your requirement 
+* the zeros specify unlimited number of blocks/files that a user can 
+ consume/create 
+To save and exit 
+---------------- 
+:x 
+Note 
+---- 
+* Now change to another terminal 
+* Login as a user "hai" and create a files until it exceeds a alocated 
+ blocks/inodes 
+To check the quotas for all users 
+--------------------------------- 
+#repquota -a 
+To stop a quota service 
+----------------------- 
+#quotaoff -a 
+ ******************************************* 
+ * LAB20. INTRODUCTION TO NETWORK SERVICES * 
+ ******************************************* 
+--------------------------------- 
+SEQUENCE-1 Inspecting your system 
+--------------------------------- 
+To see an IP address of the system 
+----------------------------------- 
+#ifconfig 
+To see the current runlevel 
+--------------------------- 
+#runlevel 
+To see the status of all services 
+--------------------------------- 
+#chkconfig --list | more 
+To find the number of end user accounts 
+--------------------------------------- 
+#cat /etc/passwd | grep /home | wc -l 
+To see a current login account 
+------------------------------ 
+#echo $LOGNAME 
+To get an acces to the system 
+----------------------------- 
+To get an access to the system we need a username and password 
+To see all the users who are currently logged in 
+------------------------------------------------ 
+#who 
+ ******************************* 
+ * LAB21. DOMAIN NAME SERVICE * 
+ ******************************* 
+* It resolves hostname to IP address and IP address to hostname 
+* The DNS's function is divided into two zones 
+ * Forward zone (Resolves hostname to IP address) 
+ * Reverse zone (Resolves IP address to hostname) 
+* It is a WAN(Wide Area Network) protocol service 
+Packages required 
+----------------- 
+* bind 
+* bind-utils 
+* bind-chroot 
+* caching-nameserver 
+Script 
+------ 
+* named 
+Daemon 
+------ 
+* named 
+Port No. 
+-------- 
+* 53 
+Configuration file 
+------------------ 
+* /etc/named.conf 
+---------------- 
+DNS Server side 
+---------------- 
+To set a hostname permanently 
+------------------------------ 
+#vi /etc/sysconfig/network 
+Edit 
+---- 
+Syn: HOSTNAME=<name> 
+Eg : HOSTNAME=trec1 
+To save and exit 
+---------------- 
+:x 
+To set a domainname 
+------------------- 
+#vi /etc/init.d/network 
+Add at line 12 
+-------------- 
+Syn: domainname <name> 
+Eg : domainname step.com 
+To save and exit 
+---------------- 
+:x 
+To activate both hostname and domainname 
+---------------------------------------- 
+#service network restart 
+To check a hostname and domainname 
+---------------------------------- 
+#hostname 
+#domainname 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/named.conf 
+* Copy the lines from 26 to 36 (Esc+11+yy) 
+* Paste it on line 37 (Esc+p) 
+Contents of lines from 26 to 36 
+------------------------------- 
+zone "localhost" IN { | 
+ type master; |-> Forward zone 
+ file "localhost.zone"; | 
+ allow-update { none; }; | 
+}; 
+zone "0.0.127.in-addr.arpa" IN { | 
+ type master; |-> Reverse zone 
+ file "named.local"; | 
+ allow-update { none; }; | 
+}; 
+Edited lines fron 37 to 47 
+-------------------------- 
+zone "step.com" IN { |-> Domainname of DNS server 
+ -------- 
+ type master; 
+ file "db.step.com"; |-> Forward zone config. file 
+ ------------ 
+ allow-update { none; }; 
+}; 
+zone "200.200.200.in-addr.arpa" IN { |-> Network ID of DNS server's IP address 
+ ------------ 
+ type master; 
+ file "db.200.200.200.in-addr.arpa"; |-> Reverse zone config. file 
+ --------------------------- 
+ allow-update { none; }; 
+}; 
+To copy a "/etc/named.conf" file to "/var/named/chroot/etc" dir 
+--------------------------------------------------------------- 
+#cp /etc/named.conf /var/named/chroot/etc/ 
+To create a forward and reverse zone files 
+------------------------------------------ 
+#cd /var/named/chroot/var/named 
+#cp named.local db.step.com 
+#cp named.local db.200.200.200.in-addr.arpa 
+To see a sample zone file format 
+-------------------------------- 
+#cd /var/named/chroot/var/named 
+#cat named.local 
+$TTL 86400 
+@ IN SOA localhost. root.localhost. ( 
+ 1997022700 ; Serial 
+ 28800 ; Refresh 
+ 14400 ; Retry 
+ 3600000 ; Expire 
+ 86400 ) ; Minimum 
+ IN NS localhost. 
+ 
+1 IN PTR localhost. 
+To edit a forward zone file 
+--------------------------- 
+#cd /var/named/chroot/var/named 
+#vi db.step.com 
+Edit 
+---- 
+$TTL 86400 
+@ IN SOA step.com. root.step.com. (
+ -------- -------- 
+ 1997022700 ; Serial 
+ 28800 ; Refresh 
+ 14400 ; Retry 
+ 3600000 ; Expire 
+ 86400 ) ; Minimum 
+ IN NS step.com. | 
+ -------- |->Domainname and IP of DNS server 
+ IN NS 200.200.200.1 | 
+trec1 IN A 200.200.200.1 |->Hostname and IP of DNS server 
+trec2 IN A 200.200.200.2 | 
+trec3 IN A 200.200.200.3 |->Hostname and IP of clients 
+trec4 IN A 200.200.200.4 | 
+To save and exit 
+---------------- 
+:x 
+To edit a reverse zone file 
+--------------------------- 
+#cd /var/named/chroot/var/named 
+#vi db.200.200.200.in-addr.arpa 
+Edit 
+---- 
+$TTL 86400 
+@ IN SOA step.com. root.step.com. (
+ -------- -------- 
+ 1997022700 ; Serial 
+ 28800 ; Refresh 
+ 14400 ; Retry 
+ 3600000 ; Expire 
+ 86400 ) ; Minimum 
+ IN NS step.com. |-> Domainname of DNS server 
+ -------- 
+ 
+1 IN PTR trec6. |-> Last byte of IP and hostname of DNS 
+2 IN PTR trec6. | 
+3 IN PTR trec6. |-> Last byte of IP and hostname of 
+4 IN PTR trec6. | clients
+To save and exit 
+---------------- 
+:x 
+Abbreviations 
+------------- 
+TTL -> Time To Live 
+SOA -> Start Of Authority 
+NS -> Name Service 
+A -> Address 
+PTR -> Pointer 
+To configure the resolver 
+------------------------- 
+#vi /etc/resolv.conf 
+Edit 
+---- 
+ Syn 
+ --- 
+ nameserver <IP address of DNS> 
+ domain <Domain name of DNS> 
+ Eg 
+ -- 
+ nameserver 200.200.200.6 
+ domain step.com 
+ 
+To save 
+------- 
+:x 
+To start a name service 
+----------------------- 
+#service named restart 
+To resolve a hostname and IP address 
+------------------------------------ 
+host 
+---- 
+Syn #host <hostname/IP address> 
+Eg1 #host trec1 
+Eg2 #host 200.200.200.1 
+nslookup 
+-------- 
+Syn #nslookup <hostname/IP address> 
+Eg1 #nslookup trec1 
+Eg2 #nslookup 200.200.200.1 
+Dig 
+--- 
+Syn #dig <FQDN> 
+Eg #dig trec1.step.com 
+Syn #dig -x <IP address> 
+Eg #dig -x 200.200.200.1 
+--------------- 
+DNS Client side 
+--------------- 
+Configure the resolver as same as in the server side and resolve the 
+hostname and IP address 
+ **************************************** 
+ * LAB22. NETWORK FILE SHARING SERVICES * 
+ **************************************** 
+------------------------------- 
+SEQUENCE-1 Setting samba server 
+------------------------------- 
+It is used for file and printer sharing 
+File sharing between 
+-------------------- 
+* Linux to Linux 
+* Linux to windows 
+* Windows to linux 
+Printer sharing between 
+----------------------- 
+* Linux to windows 
+Packages required 
+----------------- 
+* samba 
+* samba-common 
+* samba-client 
+Script 
+------ 
+* smb 
+Daemon 
+------ 
+* smbd 
+Port Nos. 
+--------- 
+* 137 
+* 138 
+* 139 
+Configuration file 
+------------------ 
+* /etc/samba/smb.conf 
+Linux to windows file sharing 
+----------------------------- 
+Server side (Linux) 
+------------------- 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/samba/smb.conf 
+Edit line 28 
+------------ 
+Source line 
+----------- 
+ 28 ;hosts allow = 192.168.1. 192.168.2. 127. 
+Edited line 
+----------- 
+ 28 hosts allow = 200.200.200. 
+Edit lines 
+---------- 
+Source lines 
+------------ 
+ 177 [homes] 
+ 178 comment = Home Directories 
+ 179 browseable = no 
+ 180 writable = yes 
+Edited lines 
+------------ 
+ 177 [myshare] 
+ 178 comment = prakashkumar 
+ 179 browseable = yes 
+ 180 writable = yes 
+ 181 pritable = no 
+ 182 path = /home 
+To save and exit 
+--------------- 
+:x 
+To create a password for a samba user 
+------------------------------------- 
+Syn #smbpasswd -a <linux user name> 
+Eg #smbpasswd -a trec1 
+ New SMB password: trecstep 
+ Retype new SMB password:trecstep 
+Note: linux user password and samba user password either 
+ can be same or different 
+To see an encrypted password of samba user 
+------------------------------------------ 
+#cat /etc/samba/smbpasswd 
+To see the samba settings 
+------------------------- 
+#testparm 
+To start a samba service 
+------------------------ 
+#service smb restart 
+Client side (Windows) 
+--------------------- 
+Start->run->\\<IP address of samba server> -> ok 
+ \\200.200.200.6 
+ |--------------------------| 
+ | Username:trec1 | 
+ | Password:trecstep | 
+ | | 
+ | OK CANCEL | 
+ |--------------------------| 
+Windows to linux file sharing 
+----------------------------- 
+Server side (Windows) 
+--------------------- 
+* Create one folder(Eg. prak) and create some files into it 
+* Select a folder and right click 
+* Select "Sharing and security" 
+* Select "Share this folder" 
+* Give a "Share name" or select "ok" to give a default share name(Eg. prak) 
+* Select "Permissions" and tick "Full control" 
+* Select "ok" 
+Client side (Linux) 
+------------------- 
+Syn #smbclient //<IP of windows server>/<share name> -U <windows user name> 
+Eg #smbclient //200.200.200.6/prak -U administrator 
+Syn: Password: <Enter windows admin. password> 
+Eg : Password:trecstep 
+smb: \> 
+To see a files in a windows shared dir 
+-------------------------------------- 
+smb: \> ls 
+To specify a local working dir 
+------------------------------ 
+smb: \> lcd /root 
+To get a file (Windows to linux) 
+--------------------------------- 
+Syn smb: \>get <file name.extension> 
+Eg smb: \>get hai.txt 
+Note: The file "hai.txt" will be stored in local system's "/root" dir 
+To see the local files from samba login 
+--------------------------------------- 
+smb: \>!ls 
+To view the contents of local files from samba login 
+---------------------------------------------------- 
+Syn smb: \>!cat <file name.extension> 
+Eg smb: \>!cat hai.txt 
+To put a file (Linux to windows) 
+-------------------------------- 
+Syn smb: \>put <file name> 
+Eg smb: \>put hello 
+Note : 
+ * To put a file, the file should be existed in a local system's /root dir 
+ * The shared folder of windows should be given a write permission 
+ * The file "hello" will be stored into windows system's shared folder 
+--------------------------------- 
+SEQUENCE-2 Setting a FTP server 
+--------------------------------- 
+* It is used to download files from the Internet and upload files 
+ to the Internet 
+* It is a WAN protocol service 
+Packages required 
+----------------- 
+* vsftpd (Very Secure FTP Daemon) 
+Script 
+------ 
+* vsftpd 
+Daemon 
+------ 
+* vsftpd 
+Port No. 
+-------- 
+* 21 
+Configuration file 
+------------------ 
+* /etc/vsftpd/vsftpd.conf 
+FTP users 
+--------- 
+* Anonymous users ( Don't have a user account in server) 
+* Real users (Have a user account in server) 
+Note 
+---- 
+* Anonymous user's home dir is "/var/ftp/pub" and they only "get" 
+ rights by default 
+* Real user's home dir is "/home/<username>" and they have both "get" 
+ and "put" rights by default 
+FTP Server side 
+--------------- 
+To give a "put" rights to an anonymous user 
+------------------------------------------- 
+#vi /etc/vsftpd/vsftpd.conf 
+Edit line 27 
+------------ 
+Source line 
+----------- 
+ 27 #anon_upload_enable=YES 
+Edited line 
+----------- 
+ 27 anon_upload_enable=YES 
+To save and exit 
+---------------- 
+:x 
+To give a write permission for a "/var/ftp/pub" dir to others 
+------------------------------------------------------------- 
+#chmod 777 /var/ftp/pub 
+To start a vsftpd service 
+------------------------- 
+#service vsftpd restart 
+Note 
+---- 
+* Create some files into "/home/<user name>" and "/var/ftp/pub" dir 
+FTP Client side 
+--------------- 
+To login as an anonymous user 
+----------------------------- 
+Syn #ftp <IP address of FTP server> 
+Eg #ftp 200.200.200.6 
+ Name : anonymous 
+ Password : <press enter> 
+ ftp> 
+To enter into an anonymous user's home dir 
+------------------------------------------ 
+ftp> cd pub 
+To see a contents of "/var/ftp/pub" dir 
+--------------------------------------- 
+ftp> ls 
+To specify a local working dir 
+------------------------------ 
+ftp> lcd /root 
+To get a file (Server to client) 
+-------------------------------- 
+Syn ftp> get <file name> 
+Eg ftp> get hai 
+Note 
+---- 
+The file "hai" will be transferred from 
+Server's "/var/ftp/pub" to Client's "/root" 
+To put a file (Clinet to server) 
+-------------------------------- 
+Syn ftp> put <file name> 
+Eg ftp> put hello 
+Note 
+---- 
+The file "hello" will be transferred from 
+Client's "/root" to Server's "/var/ftp/pub" 
+To exit from FTP 
+---------------- 
+ftp> bye 
+To login as a real user 
+----------------------- 
+Syn #ftp <IP address of FTP server> 
+Eg #ftp 200.200.200.6 
+Syn: Name : <user name> 
+ Password : <enter password> 
+Eg: Name : trec1 
+ Password : trecstep 
+ ftp> 
+To see a contents of "/home/trec1" dir 
+--------------------------------------- 
+ftp> ls 
+To specify a local working dir 
+------------------------------ 
+ftp> lcd /root 
+To get a file (Server to client) 
+-------------------------------- 
+Syn ftp> get <file name> 
+Eg ftp> get hai 
+Note 
+---- 
+The file "hai" will be transferred from 
+Server's "/home/trec1" to Client's "/root" 
+To ptt a file (Clinet to server) 
+-------------------------------- 
+Syn ftp> put <file name> 
+Eg ftp> put hello 
+Note 
+---- 
+The file "hello" will be transferred from 
+Client's "/root" to Server's "/home/trec1" 
+To exit from FTP 
+---------------- 
+ftp> bye 
+--------------------------------- 
+SEQUENCE-3 Setting a NFS server 
+--------------------------------- 
+NFS(Network File System) 
+------------------------ 
+It is used for file sharing between linux systems 
+Package required 
+----------------- 
+* nfs-utils 
+Script 
+------ 
+* nfs 
+Daemon 
+------ 
+* nfsd 
+Port Nos. 
+-------- 
+* 1024 -> For nfs client's requests 
+* 2049 -> For nfsd daemon's listening 
+* 111 -> Portmap 
+Configuration file 
+------------------ 
+* /etc/exports 
+NFS Server side 
+--------------- 
+Note: create one dir (Eg /root/mpk) and create some files into it 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/exports 
+Add 
+--- 
+Syn: <dir path> <host options> 
+Eg1: /root/mpk *(rw,sync) 
+Eg1: /root/mpk 200.200.200.1(ro,sync) 
+Eg1: /root/mpk *.yahoo.com(rw,sync) 
+Eg1: /root/mpk 200.200.200.0/255.255.255.0(rw,sync) 
+To save and exit 
+---------------- 
+:x 
+Note 
+---- 
+sync -> If the "sync" is specified, the server doesn't reply to requests before 
+ the changes made by request are written to the disk 
+Eg1 -> Read and write permission with sync to all hosts 
+Eg2 -> Read only permission with sync to the host 200.200.200.1 only 
+Eg3 -> Read and write permission with sync to all hosts in a domain yahoo.com 
+Eg4 -> Read and write permission with sync to all hosts in a network 
+ 200.200.200.0 
+To give a write permission to a shared dir 
+------------------------------------------ 
+Syn #chmod 777 <dir> 
+Eg #chmod 777 /root/mpk 
+To start a NFS service 
+---------------------- 
+#service nfs restart 
+NFS Client side 
+--------------- 
+To see a shared dir of server from client 
+----------------------------------------- 
+Syn #showmount -e <IP address of NFS server> 
+Eg #showmount -e 200.200.200.6 
+To mount a NFS manually (temporary) 
+----------------------------------- 
+Syn #mount <IP address of NFS server:shared dir path> <mount point> 
+Eg #mount 200.200.200.6:/root/mpk /tmp 
+To see a contents of a shared dir 
+--------------------------------- 
+Syn #cd <mount point> 
+Eg #cd /tmp 
+ #ls 
+To verify the mount 
+------------------- 
+#mount 
+To create a files on a shared dir 
+--------------------------------- 
+Syn #cd <mount point> 
+Eg #cd /tmp 
+Syn #cat > <file name> 
+Eg #cat > a 
+ To save and exit 
+ ---------------- 
+ Press "Ctrl+d" 
+Note 
+---- 
+The files created in this dir are stored into server's shared 
+dir(Eg /root/mpk) 
+To unmount a NFS 
+---------------- 
+ #cd 
+Syn #umount <mount point> 
+Eg #umount /tmp 
+To mount a NFS automatically (permanent) 
+---------------------------------------- 
+#vi /etc/fstab 
+Add to last line 
+---------------- 
+Syn: 
+<IP address of NFS server:shared dir> <mount point> <file system> <options> 
+<file system check> 
+Eg : 200.200.200.6:/root/mpk /tmp nfs defaults 0 0 
+To save and exit 
+---------------- 
+:x 
+To mount all partitions and file systems 
+---------------------------------------- 
+#mount -a 
+To verify the mount 
+------------------- 
+#mount 
+To see a contents of a shared dir 
+--------------------------------- 
+Syn #cd <mount point> 
+Eg #cd /tmp 
+ #ls 
+ ************************************** 
+ * LAB23. NETWORK INFORMATION SERVICE *
+ ************************************** 
+NIS 
+--- 
+It was developed by sun micro systems. Using NIS, computers can share a 
+common set of user accounts. It is also called as Yellow Pages(YP) 
+Packages required 
+----------------- 
+* ypserv 
+* ypbind 
+* yp-tools 
+Scripts 
+------- 
+* ypserv 
+* ypbind 
+* yppaswdd 
+Daemons 
+------- 
+* ypserv 
+* ypbind 
+* rpc.passwdd 
+* ypwhich 
+Port No. 
+-------- 
+Port is dynamically assigned by portmap 
+Configuration files 
+------------------- 
+* /etc/nsswitch.conf 
+* /etc/yp.conf 
+NIS Server side 
+---------------- 
+Note: Create one user and remove a password (Eg. trec1) 
+ 
+To set a hostname permanently 
+------------------------------ 
+#vi /etc/sysconfig/network 
+Edit 
+---- 
+Syn: HOSTNAME=<name> 
+Eg : HOSTNAME=trec1 
+To save and exit 
+---------------- 
+:x 
+To set a domainname 
+------------------- 
+#vi /etc/init.d/network 
+Add at line 12 
+-------------- 
+Syn: domainname <name> 
+Eg : domainname step.com 
+To save and exit 
+---------------- 
+:x 
+To activate both hostname and domainname 
+---------------------------------------- 
+#service network restart 
+To check a hostname and domainname 
+---------------------------------- 
+#hostname 
+#domainname 
+To edit "/etc/hosts" file 
+------------------------- 
+#vi /etc/hosts 
+Add 
+--- 
+Syn: <IP address of NIS server> <FQDN> <hostname> 
+Eg : 200.200.200.1 trec1.step.com trec1 
+To save and exit 
+---------------- 
+:x 
+To start a ypserv service 
+------------------------- 
+#service ypserv restart 
+To start a yppasswdd service 
+---------------------------- 
+#service yppasswdd restart 
+To create a NIS map 
+-------------------- 
+#cd /var/yp 
+#make 
+To export a "/home" dir 
+----------------------- 
+#vi /etc/exports 
+Add 
+--- 
+/home *(rw) 
+To save and exit 
+---------------- 
+:x 
+To start a NFS service 
+---------------------- 
+#service nfs restart 
+To start a ypbind service 
+------------------------- 
+#service ypbind restart 
+NIS Client side 
+--------------- 
+To authorize a NIS server 
+------------------------- 
+#authconfig 
+* Select "Use NIS" by pressing a "space bar" 
+* Give "Domain name of NIS server" in "Domain" field 
+* Give "IP Address of NIS server" in "Server" field
+* Select "Next" 
+* Select "Ok" 
+ |--------------------------| 
+ | Domain: step.com | 
+ | Server: 200.200.200.1 | 
+ |--------------------------| 
+To verify the connection to the server 
+-------------------------------------- 
+#cat /etc/yp.conf 
+o/p domain step.com 200.200.200.1 
+ (or) 
+#ypwhich 
+o/p 200.200.200.1 (or) trec1.step.com 
+To automount a server's "/home" dir on client's "/home" dir 
+----------------------------------------------------------- 
+#vi /etc/auto.misc 
+Add to last line 
+---------------- 
+Syn: * -rw,soft,intr <IP Address of NIS server>:/home/& 
+Eg : * -rw,soft,intr 200.200.200.1:/home/& 
+To save and exit 
+---------------- 
+:x 
+#vi /etc/auto.master 
+Add to last line 
+---------------- 
+Syn : <mount point> /etc/auto.misc --timeout=<secs> 
+Eg : /home /etc/auto.misc --timeout=60 
+To save and exit 
+---------------- 
+:x 
+To start an auotofs service 
+--------------------------- 
+#service autofs restart 
+To login server's user at client 
+-------------------------------- 
+* Change to another terminal 
+* Login as server's username with password (Eg. trec1) 
+• Create some files and chech whether the files are updated to the server 
+ **************************** 
+ * LAB24. APACHE WEB SERVER * 
+ **************************** 
+A webserver contains a web pages running on it and provides a access to 
+this webpages when the clients request 
+Packages required 
+----------------- 
+* httpd 
+* httpd-devel 
+* lynx 
+Script 
+------ 
+* httpd 
+Daemon 
+------ 
+* httpd 
+Port No. 
+-------- 
+* 80 
+Configuration file 
+------------------ 
+* /etc/httpd/conf/httpd.conf 
+Apache Server side 
+------------------ 
+ 
+To set a hostname permanently 
+------------------------------ 
+#vi /etc/sysconfig/network 
+Edit 
+---- 
+Syn: HOSTNAME=<name> 
+Eg : HOSTNAME=trec1 
+To save and exit 
+---------------- 
+:x 
+To set a domainname 
+------------------- 
+#vi /etc/init.d/network 
+Add at line 12 
+-------------- 
+Syn: domainname <name> 
+Eg : domainname step.com 
+To save and exit 
+---------------- 
+:x 
+To activate both hostname and domainname 
+---------------------------------------- 
+#service network restart 
+To check a hostname and domainname 
+---------------------------------- 
+#hostname 
+#domainname 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/httpd/conf/httpd.conf 
+Edit line 258 
+------------- 
+Source line 
+----------- 
+ 258 #ServerName new.host.name:80 
+Edited line 
+----------- 
+ 258 ServerName trec1.step.com:80 
+Edit line 1036 
+-------------- 
+Source line 
+----------- 
+ 1036 #NameVirtualHost *:80 
+Edited line 
+----------- 
+ 1036 NameVirtualHost *:80 
+Note: The above line must be uncommented to run a multiple websites from 
+ the same machine 
+* Copy the lines from 1044 to 1050 (Esc+7+yy) 
+* Paste the lines at line 1051 (Esc+p) 
+Source lines from 1044 to 1050 
+------------------------------ 
+ 1044 #<VirtualHost *:80> 
+ 1045 # ServerAdmin webmaster@dummy-host.example.com 
+ 1046 # DocumentRoot /www/docs/dummy-host.example.com 
+ 1047 # ServerName dummy-host.example.com 
+ 1048 # ErrorLog logs/dummy-host.example.com-error_log 
+ 1049 # CustomLog logs/dummy-host.example.com-access_log common 
+ 1050 #</VirtualHost> 
+Edited lines from 1051 to 1057 
+------------------------------ 
+ 1051 <VirtualHost *:80> 
+ 1052 ServerAdmin root@www.step.com 
+ 1053 DocumentRoot /var/www/html/www.step.com 
+ 1054 ServerName www.step.com 
+ 1055 ErrorLog logs/www.step.com-error_log 
+ 1056 CustomLog logs/www.step.com-access_log common 
+ 1057 </VirtualHost> 
+To save and exit 
+---------------- 
+:x 
+ 
+To create a website 
+------------------- 
+#cd /var/www/html 
+#mkdir www.step.com 
+#cd www.step.com 
+#cat > index.html 
+ welcome to my website 
+ To save and exit 
+ --------------- 
+ Press "Ctrl+d" 
+To specify the webserver's address in "/etc/hosts" 
+------------------------------------------------- 
+#vi /etc/hosts 
+ 
+Add 
+--- 
+Syn: <IP address of NIS server> <FQDN> <hostname> <website name> 
+Eg : 200.200.200.1 trec1.step.com trec1 www.step.com 
+ 
+To save and exit 
+---------------- 
+:x 
+ 
+To start a httpd service 
+------------------------- 
+#service httpd restart 
+To open a website 
+----------------- 
+Text mode 
+--------- 
+Syn #lynx <website name> 
+Eg #lynx www.step.com 
+Note: The "lynx" is also called as "Console interface" 
+GUI mode 
+-------- 
+* Open "Mozilla" and type the website address (Eg. www.step.com) in the 
+ address bar and press "Enter" 
+Apache Client side 
+------------------ 
+* Specify the webserver's address in "/etc/hosts" and open a website 
+ either from a text mode or GUI mode 
+ ************************************ 
+ * LAB25. MAIL SERVER CONFIGURATION * 
+ ************************************ 
+Sendmail server 
+--------------- 
+It is used to send and receive mails. 
+Three parts of mail transfer 
+---------------------------- 
+* MTA (Mail Transfer Agent) 
+* MDA (Mail Delivery Agent) 
+* MUA (Mail User Agent) 
+MTA 
+--- 
+It distributes outgoing mail and listening for incoming mail 
+MDA 
+--- 
+It accepts messages from MTA and copies the message into user's mail box 
+MUA 
+--- 
+It is an application progarm, used to send and receive mails 
+Packages required 
+----------------- 
+* sendmail 
+* sendmail-cf 
+* sendmail-doc 
+* sendmail-devel 
+* m4 
+Script 
+------ 
+* sendmail 
+Daemon 
+------ 
+* sendmail 
+Port No. 
+-------- 
+* 25 (SMTP) 
+Configuration file 
+------------------ 
+* /etc/mail/sendmail.cf (Main config. file contains all configs.) 
+* /etc/mail/sendmail.mc (Macro config. file contains basic configs.) 
+Before doing sendmail config. ensure the following 
+-------------------------------------------------- 
+* DNS must be available 
+* Hostname of the systems in a network must be unique (Eg trec1,trec2) 
+* Domainname of the systems in a network must be same (Eg step.com) 
+* Firewall should be configured to allow the mails or it should be disabled 
+Sendmail Server side 
+-------------------- 
+ 
+To set a hostname permanently 
+------------------------------ 
+#vi /etc/sysconfig/network 
+Edit 
+---- 
+Syn: HOSTNAME=<name> 
+Eg : HOSTNAME=trec1 
+To save and exit 
+---------------- 
+:x 
+To set a domainname 
+------------------- 
+#vi /etc/init.d/network 
+Add at line 12 
+-------------- 
+Syn: domainname <name> 
+Eg : domainname step.com 
+To save and exit 
+---------------- 
+:x 
+To activate both hostname and domainname 
+---------------------------------------- 
+#service network restart 
+To check a hostname and domainname 
+---------------------------------- 
+#hostname 
+#domainname 
+To specify the mail server's address in "/etc/hosts" 
+---------------------------------------------------
+#vi /etc/hosts 
+ 
+Add 
+--- 
+Syn: <IP address of NIS server> <FQDN> <hostname> 
+Eg : 200.200.200.1 trec1.step.com trec1 
+ 
+To save and exit 
+---------------- 
+:x 
+ 
+To specify the DNS server's IP and domainname 
+--------------------------------------------- 
+#vi /etc/resolv.conf 
+Edit 
+---- 
+ Syn 
+ --- 
+ nameserver <IP address of DNS> 
+ domain <Domain name of DNS> 
+ Eg 
+ -- 
+ nameserver 200.200.200.6 
+ domain step.com 
+ 
+To save 
+------- 
+:x 
+To edit a macro configuration file 
+---------------------------------- 
+#vi /etc/mail/sendmail.mc 
+Edit line 84 
+------------ 
+Source line 
+----------- 
+ 84 DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl 
+Edited line 
+----------- 
+ 84 dnl DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl 
+To save 
+------- 
+:x 
+Note: dnl-> Delete to New Line. Itis like a comment
+ The line 84 must be commented to allow the trafic from LAN 
+To write the contents of sendmail.mc to sendmail.cf
+---------------------------------------------------
+#cd /etc/mail 
+#m4 sendmail.mc > sendmail.cf 
+#cd 
+Note: M4 is a simulation of a macro processor, used to write the 
+ contents of sendmail.mc to sendmail.cf 
+To redirect a root user's mail to a normal user 
+----------------------------------------------- 
+#vi /etc/aliases 
+Edit line 84 
+------------- 
+Source line 
+----------- 
+ 84 #root: bryan 
+Edited line 
+----------- 
+ Syn 84 root: <normal user name> 
+ Eg 84 root: trec5 
+To save 
+------- 
+:x 
+To update the aliases 
+--------------------- 
+#newaliases 
+Note: Now the "root" user's incoming mails will be redirected to a 
+ user "trec5" 
+To start a sendmail service 
+--------------------------- 
+#service sendmail restart 
+To disable a firewall 
+--------------------- 
+#iptables -F 
+To send a mail 
+-------------- 
+Syn #mail <user name>@<FQDN> 
+Eg #mail root@trec2.step.com 
+ Subject: <type a subject> 
+ < 
+ type the body of the mail 
+ > 
+ . <press enter> 
+ Cc: <press enter or type "copy to" address> 
+ # 
+To receive a mail 
+----------------- 
+#mail 
+&<enter the mail number to read> 
+&<type "q" quit> 
+Sendmail Client side 
+-------------------- 
+* Do the same procedures in server side 
+ ***************************** 
+ * LAB26. SYSTEM MONITORING * 
+ ***************************** 
+-------------------------------------------- 
+SEQUENCE-1 Loading vulnerable files and dirs 
+-------------------------------------------- 
+To locate SUID and SGID files and store their names in /root/stickyfiles 
+------------------------------------------------------------------------ 
+#find / -type f -perm +6000 > /root/stickyfiles 
+To locate world writable files and store their names in 
+/root/world.writable.files 
+------------------------------------------------------- 
+#find / -type f -perm +0002 > /root/world.writable.files 
+--------------------------------------- 
+SEQUENCE-2 Controlling access to files 
+--------------------------------------- 
+To prevent the file from being deleted 
+-------------------------------------- 
+Syn #chattr +i <file name> 
+Eg #chattr +i hai 
+To allow data to only be appended to the file 
+--------------------------------------------- 
+Syn #chattr +a <filename> 
+Eg #chattr +a hai 
+To verify that the attributes have been changed 
+----------------------------------------------- 
+Syn #lsattr <file name> 
+Eg #lsattr hai 
+To append a contents to a file 
+------------------------------ 
+Syn #cat >> <file name> 
+Eg #cat >> hai 
+ * Type the contents 
+ To save and exit 
+ ---------------- 
+ Press "Ctrl+d" 
+-------------------------------------------- 
+SEQUENCE-3 Logging to a centralized loghost 
+-------------------------------------------- 
+Note: Set a hostname(Eg trec1) and domainname(step.com) first 
+To set a DNS server's IP and domainname 
+--------------------------------------- 
+#vi /etc/resolv.conf 
+Edit 
+---- 
+nameserver 200.200.200.6 
+domainname step.com 
+To save and exit 
+---------------- 
+:x 
+To setup syslogd to accept remote messages 
+------------------------------------------ 
+#vi /etc/sysconfig/syslog 
+Edit line 6 
+------------ 
+Source line 
+----------- 
+ 6 SYSLOGD_OPTIONS="-m 0" 
+Edited line 
+----------- 
+ 6 SYSLOGD_OPTIONS="-r -m 0" 
+To save and exit 
+---------------- 
+:x 
+To setup syslogd to send messages to another system
+---------------------------------------------------
+#vi /etc/syslog.conf 
+Add to last line 
+---------------- 
+Syn: user.* @<hostname of system> 
+Eg : user.* @trec2 
+To save and exit 
+---------------- 
+:x 
+To start a syslog service 
+------------------------- 
+#service syslog restart 
+Note: Do the same procedures in a system "trec2" 
+To generate a syslog message 
+---------------------------- 
+Syn #logger -i -t <your name> "<message>" 
+Eg #logger -i -t prakashkumar "this is a test" 
+To check a syslog message in a local system 
+------------------------------------------- 
+#cat /var/log/messages 
+To check a syslog message in a remote system 
+------------------------------------------- 
+* Login in a system "trec2" 
+#cat /var/log/messages 
+ *************************** 
+ * LAB27. SECURING NETWORK * 
+ *************************** 
+----------------------------------------------------- 
+SEQUENCE-1 Applying simple packet filtering to a host 
+----------------------------------------------------- 
+To clear any existing rules and custom chains on both 
+stationX and stationY 
+----------------------------------------------------- 
+#service iptables stop 
+To confirm 
+---------- 
+#iptables -L 
+To ensure the SSH service is running on stationX 
+------------------------------------------------ 
+#service sshd status 
+To ensure the HTTP service is running on stationY 
+------------------------------------------------- 
+#service httpd status 
+To confirm exposed ports on stationX from stationY 
+-------------------------------------------------- 
+Syn #nmap <stationX> 
+Eg #nmap 200.200.200.1 
+To confirm stationX can establish SSH connections to stationY 
+------------------------------------------------------------- 
+Syn #ssh <stationY> 
+Eg #ssh 200.200.200.2 
+To apply a new default policy on the INPUT chain on stationX 
+------------------------------------------------------------ 
+#iptables -P INPUT DROP 
+To allow local connections on stationX 
+-------------------------------------- 
+#iptables -A INPUT -i lo -j ACCEPT 
+To allow return packets on stationX 
+----------------------------------- 
+#iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 
+To allow connections to the SSH service on stationX
+---------------------------------------------------
+#iptables -A INPUT -p tcp --dport ssh -j ACCEPT 
+To confirm that only the SSH port is not exposed from stationY 
+-------------------------------------------------------------- 
+Syn #nmap <stationX> 
+Eg #nmap 200.200.200.1 
+To confirm that stationX can still make a connection to stationY 
+---------------------------------------------------------------- 
+Syn #ssh <stationY> 
+Eg #ssh 200.200.200.2 
+To save the iptables configurations 
+----------------------------------- 
+#service iptables save 
+To view the iptables configuration file 
+--------------------------------------- 
+#cat /etc/sysconfig/iptables 
+To make the configuration persistent across reboots
+---------------------------------------------------
+#chkconfig iptables on 
+ 
+ **************************** 
+ * LAB28. SECURING SERVICES * 
+ **************************** 
+TCP WRAPPERS 
+------------ 
+It is used to allow and deny access to the services
+Configuration files 
+------------------- 
+* /etc/hosts.allow 
+* /etc/hosts.deny 
+To specify the hosts to allow 
+----------------------------- 
+#vi /etc/hosts.allow 
+Add 
+--- 
+Syn : <service name>:<host options> 
+Eg1 : sshd:ALL -> Allow access to ssh service to all hosts 
+Eg2 : sshd:200.200.200. -> Allow access to ssh service to all hosts 
+ in a network 200.200.200. 
+Eg3 : sshd:200.200.200.1 -> Allow access to ssh service to the host 
+ 200.200.200.1 only 
+Eg4 : ALL:ALL -> Allow access to all services to all hosts 
+To save and exit 
+---------------- 
+:x 
+To specify the hosts to deny 
+---------------------------- 
+#vi /etc/hosts.deny 
+Add 
+--- 
+Syn : <service name>:<host options> 
+Eg1 : sshd:ALL -> Deny access to ssh service to all hosts 
+Eg2 : sshd:200.200.200. -> Deny access to ssh service to all hosts 
+ in a network 200.200.200. 
+Eg3 : sshd:200.200.200.1 -> Deny access to ssh service to the host 
+ 200.200.200.1 only 
+Eg4 : ALL:ALL -> Deny access to all services to all hosts 
+To save and exit 
+---------------- 
+:x 
+To make the ssh service available to every host in local subnet, but no 
+other networks 
+----------------------------------------------------------------------- 
+* Consider a local subnet is 200.200.200. 
+#vi /etc/hosts.deny 
+Add 
+--- 
+sshd:ALL EXCEPT 200.200.200. 
+To save and exit 
+---------------- 
+:x 
+To make the telnet service available to three of your friends , but no 
+one else 
+---------------------------------------------------------------------- 
+* Consider your friends system's IP addresses are 200.200.200.1, 
+ 200.200.200.2 and 200.200.200.3 
+#vi /etc/xinetd.d/telnet 
+Add at line 13 
+-------------- 
+only_from = 200.200.200.1 200.200.200.2 200.200.200.3 
+To save and exit 
+---------------- 
+:x 
+To make all services unavailable to the domain example.com 
+----------------------------------------------------------- 
+* Consider the network ID of a domain example.com is 200.200.200.0 
+#vi /etc/xinetd.conf 
+Add at line 13 
+-------------- 
+no_access = 200.200.200.0/24 
+To save and exit 
+---------------- 
+:x 
+ ************************ 
+ * LAB29. SECURING DATA * 
+ ************************ 
+-------------------------------------------------- 
+SEQUENCE1. Using SSH for encrypted communications 
+-------------------------------------------------- 
+To access a remote system using SSH 
+----------------------------------- 
+Syn #ssh <user name>@<FQDN or IP addr. of remote sys.> 
+Eg1 #ssh trec1@trec1.step.com 
+Eg2 #ssh trec1@200.200.200.1 
+o/p 
+Are you sure you want to continue connecting(yes/no)? yes 
+trec1@200.200.200.1's password: <enter the trec1's password> 
+$ 
+Note: If you want to use FQDN instead of IP address, you need a DNS 
+To access a remote system using SSH as a root user 
+-------------------------------------------------- 
+Syn #ssh <FQDN or IP addr. of remote sys.> 
+Eg1 #ssh trec1.step.com 
+Eg2 #ssh 200.200.200.1 
+o/p 
+Are you sure you want to continue connecting(yes/no)? yes 
+root@200.200.200.1's password: <enter the root's password> 
+# 
+Note: If you want to use FQDN instead of IP address, you need a DNS 
+To copy a file from a remote system to local system
+---------------------------------------------------
+* Consider you have logged in to a remote system 200.200.200.2 from 
+ a local system 200.200.200.1 using SSH 
+Syn #scp <sourcefile name> <local system's IP:destination dir> 
+Eg #scp hai 200.200.200.1:/root 
+o/p 
+Are you sure you want to continue connecting(yes/no)? yes 
+root@200.200.200.1's password: <enter the local system's root password> 
+To logout from a remote system 
+------------------------------ 
+Press "Ctrl+d" 
+Note: Now go to a "/root" dir and check whether the file "hai" 
+ is existed or not 
+To access a remote system through SSH without giving a password 
+--------------------------------------------------------------- 
+* Consider a local system is 200.200.200.1 
+* Consider a remote system is 200.200.200.2 
+Syn #ssh-keygen -t <type of key> 
+Eg1 #ssh-keygen -t rsa 
+* Press "Enter" for all inputs 
+To copy the public key file to a remote system 
+----------------------------------------------- 
+#cd /root/.ssh 
+#scp id_rsa.pub 200.200.200.2:/root/.ssh/authorized_keys 
+password:<Enter the remote system's root password> 
+# 
+Note: Now we can access a remote system 200.200.200.2 through SSH 
+ without giving a password as a "root" user 
+To connect to a remote system and ensure that the password is not supplied 
+--------------------------------------------------------------------------- 
+#ssh 200.200.200.2 
+# 
+ ********** 
+ * TELNET * 
+ ********** 
+* It is used for remote login 
+* It is a WAN protocol service 
+Packages required 
+----------------- 
+* telnet-server 
+* xinetd 
+Script 
+------ 
+* xinetd 
+Daemon 
+------ 
+* xinetd 
+Port No. 
+-------- 
+* 23 
+Configuration file 
+------------------- 
+* /etc/xinetd.d/telnet 
+Telnet Server side 
+------------------ 
+Note: Create one user and remove a password (Eg. trec1) 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/xinetd.d/telnet 
+Edit line 12 
+------------ 
+Source line 
+----------- 
+ 12 disable = yes 
+Edited line 
+----------- 
+ 12 disable = no 
+To save and exit 
+---------------- 
+:x 
+To start a telnet service 
+------------------------- 
+#service xinetd restart 
+Telnet Client side 
+------------------ 
+Linux 
+----- 
+Syn #telnet <IP Address of telnet server> 
+Eg #telnet 200.200.200.1 
+ |--------------------------| 
+ | Login: trec1 | 
+ | Password: trecstep | 
+ |--------------------------| 
+Windows 
+------- 
+Start->run->telnet <IP Address of telnet server> ->ok 
+ 
+ |--------------------------| 
+ | Login: trec1 | 
+ | Password: trecstep | 
+ |--------------------------| 
+ ******** 
+ * DHCP * 
+ ******** 
+DHCP(Dynamic Host Configuration Protocol) 
+----------------------------------------- 
+It automatically assigns IP addresses to clients on the network 
+from the group of available IP addresses 
+Packages required 
+----------------- 
+* dhcp 
+Script 
+------ 
+* dhcpd 
+Daemon 
+------ 
+* dhcpd 
+Port No. 
+-------- 
+* 67 
+Configuration file 
+------------------- 
+* /etc/dhcpd.conf 
+DHCP Server side 
+------------------ 
+To create a configuration file 
+------------------------------- 
+#cd /usr/share/doc/dhcp-3.0pl2/ 
+#cp dhcpd.conf.sample /etc/dhcpd.conf 
+To edit a configuration file 
+---------------------------- 
+#vi /etc/dhcpd.conf 
+Edit line 4 
+------------ 
+ 
+ Source line 
+ ----------- 
+ 4 subnet 192.168.0.0 netmask 255.255.255.0 { 
+ Edited line 
+ ----------- 
+ 4 subnet 200.200.200.0 netmask 255.255.255.0 { 
+Edit line 21 
+------------ 
+ Source line 
+ ----------- 
+ 21 range dynamic-bootp 192.168.0.128 192.168.0.254; 
+ Edited line 
+ ----------- 
+ 21 range dynamic-bootp 200.200.200.20 200.200.200.20; 
+To save and exit 
+---------------- 
+:x 
+To start a dhcp service 
+------------------------- 
+#service dhcpd restart 
+DHCP Client side 
+---------------- 
+#dhclient 
+ (or) 
+#netconfig 
+* Select "Yes" to "would you like to setup networking" 
+* Select "Use dynamic IP configuration (BOOTP/DHCP)" 
+* Select "Ok" 
+To start networking 
+------------------- 
+#service network restart 
+To see an IP address 
+-------------------- 
+#ifconfig 
